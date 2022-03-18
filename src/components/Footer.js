@@ -1,0 +1,67 @@
+import React, { useEffect } from "react"
+import Aos from "aos"
+import "aos/dist/aos.css"
+
+const Footer = () => {
+    useEffect(() => {
+        Aos.init({ duration: 500, once: true })
+    })
+    return (
+        <footer className="text-gray-400 body-font" data-aos="fade-up">
+            <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <a
+                    href="images/img.jpeg"
+                    className="flex title-font font-medium items-center md:justify-start justify-center text-white"
+                >
+                    <img
+                        src={require("../images/img.jpeg")}
+                        height="40"
+                        width="40"
+                        alt="img"
+                        className="circle_image"
+                    />
+                    <span className="ml-3 text-xl">S1D</span>
+                </a>
+                <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+                    Copyright (c) 2022 —
+                    <a
+                        href="https://github.com/AHiddenDonut/"
+                        className="text-gray-500 ml-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        @AHiddenDonut
+                    </a>
+                </p>
+                <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                    <a
+                        href="https://github.com/AHiddenDonut/"
+                        className="text-gray-400"
+                    >
+                        <i className="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                        href="mailto:31.siddhant.sharma@gmail.com"
+                        className="ml-3 text-gray-400"
+                    >
+                        <i className="fa-solid fa-at"></i>
+                    </a>
+                    <a
+                        href="https://instagram.com/siddhant_.31"
+                        className="ml-3 text-gray-400"
+                    >
+                        <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a
+                        href="https://discord.com/users/918703165648539700"
+                        className="ml-3 text-gray-400"
+                    >
+                        <i className="fa-brands fa-discord"></i>
+                    </a>
+                </span>
+            </div>
+        </footer>
+    )
+}
+
+export default Footer
