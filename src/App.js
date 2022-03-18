@@ -20,36 +20,34 @@ function App() {
     }, [])
     return (
         <>
-            {
-                loading ? (
-                    <Preloader></Preloader>
-                ) : (
-                    <Router>
-                        <Routes>
-                            <Route
-                                path="*"
-                                element={
-                                    <>
-                                        <Notfound />
-                                    </>
-                                }
-                            />
-                            <Route
-                                exact
-                                path="/"
-                                element={
-                                    <>
-                                        <Navbar />
-                                        <Hero />
-                                        <Projects />
-                                        <Footer />
-                                    </>
-                                }
-                            />
-                        </Routes>
-                    </Router>
-                )
-            }
+            {loading ? (
+                <Preloader></Preloader>
+            ) : (
+                <Router>
+                    <Routes>
+                        <Route
+                            path="*"
+                            element={
+                                <>
+                                    <Notfound />
+                                </>
+                            }
+                        />
+                        <Route
+                            exact
+                            path="/"
+                            element={
+                                <>
+                                    <Navbar />
+                                    <Hero />
+                                    <Projects />
+                                    <Footer />
+                                </>
+                            }
+                        />
+                    </Routes>
+                </Router>
+            )}
         </>
     )
 }

@@ -1,13 +1,8 @@
-import React, { useEffect } from "react"
-import Aos from "aos"
-import "aos/dist/aos.css"
+import React from "react"
 
 const Footer = () => {
-    useEffect(() => {
-        Aos.init({ duration: 500, once: true })
-    })
     return (
-        <footer className="text-gray-400 body-font" data-aos="fade-up">
+        <footer className="text-gray-400 body-font">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a
                     href="images/img.jpeg"
