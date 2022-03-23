@@ -10,7 +10,7 @@ const DiscordBots = () => {
     return (
         <section className="text-gray-400 body-font" data-aos="fade">
             <Helmet>
-                <title>S1D</title>
+                <title>S1D - Discord Bots</title>
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:url"

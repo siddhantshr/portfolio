@@ -10,7 +10,7 @@ const Requests = () => {
     return (
         <section className="text-gray-400 body-font" data-aos="fade">
             <Helmet>
-                <title>S1D</title>
+                <title>S1D - Requests</title>
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:url"

@@ -29,6 +29,7 @@ function App() {
             ) : (
                 <Router>
                     <Helmet>
+                        <meta charSet="utf-8" />
                         <title>S1D</title>
                         <meta property="og:type" content="website" />
                         <meta
