@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Aos from "aos"
 import "aos/dist/aos.css"
-import {Helmet} from "react-helmet"
+import { Helmet } from "react-helmet"
 
 const Requests = () => {
     useEffect(() => {
@@ -12,7 +12,10 @@ const Requests = () => {
             <Helmet>
                 <title>S1D</title>
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="http://siddhantshr.me/blogs/requests" />
+                <meta
+                    property="og:url"
+                    content="http://siddhantshr.me/blogs/requests"
+                />
                 <meta property="og:title" content="S1D - Blogs" />
                 <meta
                     property="og:description"
@@ -20,10 +23,16 @@ const Requests = () => {
                     which is located on a server. The aim of the request is
                     to access a resource on the server."
                 />
-                <meta property="og:image" content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`} />
+                <meta
+                    property="og:image"
+                    content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
+                />
 
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://siddhantshr.me/blogs/requests" />
+                <meta
+                    property="twitter:url"
+                    content="https://siddhantshr.me/blogs/requests"
+                />
                 <meta property="twitter:title" content="S1D - Requests" />
                 <meta
                     property="twitter:description"
@@ -31,8 +40,14 @@ const Requests = () => {
                     which is located on a server. The aim of the request is
                     to access a resource on the server."
                 />
-                <meta name="twitter:image" content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`} />
-                <meta name="keywords" content="Discord Bots, Siddhant Sharma, Discord API, Hyena, Vaxin Alerts, Siddhant, AHiddenDonut"/>
+                <meta
+                    name="twitter:image"
+                    content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
+                />
+                <meta
+                    name="keywords"
+                    content="Discord Bots, Siddhant Sharma, Discord API, Hyena, Vaxin Alerts, Siddhant, AHiddenDonut"
+                />
             </Helmet>
             <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                 <div className="flex flex-col text-center w-full mb-12">
@@ -388,7 +403,12 @@ const Requests = () => {
                                                     1
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                    <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.get">'GET'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.get"
+                                                    >
+                                                        'GET'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     GET is used to retrieve and
@@ -402,7 +422,12 @@ const Requests = () => {
                                                     2
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                    <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.post">'POST'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.post"
+                                                    >
+                                                        'POST'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     POST request method requests
@@ -417,7 +442,12 @@ const Requests = () => {
                                                     3
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                    <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.delete">'DELETE'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.delete"
+                                                    >
+                                                        'DELETE'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     The HTTP DELETE method is
@@ -430,7 +460,12 @@ const Requests = () => {
                                                     4
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                    <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.put">'PUT'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.put"
+                                                    >
+                                                        'PUT'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     HTTP PUT request method
@@ -445,7 +480,12 @@ const Requests = () => {
                                                     5
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                    <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.head">'HEAD'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.head"
+                                                    >
+                                                        'HEAD'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     The HEAD method asks for a
@@ -459,7 +499,12 @@ const Requests = () => {
                                                     6
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
-                                                <a className="text-indigo-600" href="https://docs.python-requests.org/en/stable/api/#requests.patch">'PATCH'</a>
+                                                    <a
+                                                        className="text-indigo-600"
+                                                        href="https://docs.python-requests.org/en/stable/api/#requests.patch"
+                                                    >
+                                                        'PATCH'
+                                                    </a>
                                                 </td>
                                                 <td className="text-sm text-gray-900 font-light px-6 py-4">
                                                     The HTTP PATCH request

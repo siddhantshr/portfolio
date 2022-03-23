@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Aos from "aos"
 import "aos/dist/aos.css"
-import {Helmet} from "react-helmet"
+import { Helmet } from "react-helmet"
 
 const DiscordBots = () => {
     useEffect(() => {
@@ -12,7 +12,10 @@ const DiscordBots = () => {
             <Helmet>
                 <title>S1D</title>
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="http://siddhantshr.me/blogs/discord-bots" />
+                <meta
+                    property="og:url"
+                    content="http://siddhantshr.me/blogs/discord-bots"
+                />
                 <meta property="og:title" content="S1D - Discord Bots" />
                 <meta
                     property="og:description"
@@ -20,10 +23,16 @@ const DiscordBots = () => {
                     helpful artificial intelligence that can perform several
                     useful tasks on your server automatically."
                 />
-                <meta property="og:image" content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`} />
+                <meta
+                    property="og:image"
+                    content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
+                />
 
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="http://siddhantshr.me/blogs/discord-bots" />
+                <meta
+                    property="twitter:url"
+                    content="http://siddhantshr.me/blogs/discord-bots"
+                />
                 <meta property="twitter:title" content="S1D - Discord Bots" />
                 <meta
                     property="twitter:description"
@@ -31,8 +40,14 @@ const DiscordBots = () => {
                     helpful artificial intelligence that can perform several
                     useful tasks on your server automatically."
                 />
-                <meta name="twitter:image" content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`} />
-                <meta name="keywords" content="Discord Bots, Siddhant Sharma, Discord API, Hyena, Vaxin Alerts, Siddhant, AHiddenDonut"/>
+                <meta
+                    name="twitter:image"
+                    content={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
+                />
+                <meta
+                    name="keywords"
+                    content="Discord Bots, Siddhant Sharma, Discord API, Hyena, Vaxin Alerts, Siddhant, AHiddenDonut"
+                />
             </Helmet>
             <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                 <div className="flex flex-col text-center w-full mb-12">
