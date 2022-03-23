@@ -5,11 +5,11 @@ const Footer = () => {
         <footer className="text-gray-400 body-font">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a
-                    href="images/img.jpeg"
+                    href="images/cat.png"
                     className="flex title-font font-medium items-center md:justify-start justify-center text-white"
                 >
                     <img
-                        src={require("../images/img.jpeg")}
+                        src={`${process.env.PUBLIC_URL}/assets/cat.png`}
                         height="40"
                         width="40"
                         alt="img"

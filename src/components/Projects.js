@@ -4,7 +4,7 @@ import "aos/dist/aos.css"
 
 const Projects = () => {
     useEffect(() => {
-        Aos.init({ duration: 1000, once: true })
+        Aos.init({ duration: 500, once: true })
     })
     return (
         <section className="text-gray-400 body-font" id="projects">
@@ -22,7 +22,7 @@ const Projects = () => {
                         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                             <img
                                 className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src={require("../images/hyena.png")}
+                                src={`${process.env.PUBLIC_URL}/assets/hyena.png`}
                                 alt="hyena"
                             />
                             <div className="p-6">
@@ -64,7 +64,7 @@ const Projects = () => {
                         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                             <img
                                 className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src={require("../images/vaxin-alerts.png")}
+                                src={`${process.env.PUBLIC_URL}/assets/vaxin-alerts.png`}
                                 alt="Vaxin Alerts"
                             />
                             <div className="p-6">
@@ -106,7 +106,7 @@ const Projects = () => {
                         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                             <img
                                 className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src={require("../images/acj.png")}
+                                src={`${process.env.PUBLIC_URL}/assets/acj.png`}
                                 alt="blog"
                             />
                             <div className="p-6">

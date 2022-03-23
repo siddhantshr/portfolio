@@ -11,7 +11,7 @@ function Navbar() {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                                 <img
-                                    src={require("../images/cat.png")}
+                                    src={`${process.env.PUBLIC_URL}/assets/cat.png`}
                                     width="50"
                                     height="50"
                                     alt="logo lol"
