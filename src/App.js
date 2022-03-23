@@ -11,7 +11,6 @@ import BlogsIntro from "./components/BlogsIntro"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Helmet } from "react-helmet"
 
 function App() {
     const [loading, setLoading] = useState(false)
@@ -28,49 +27,6 @@ function App() {
                 <Preloader></Preloader>
             ) : (
                 <Router>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>S1D</title>
-                        <meta property="og:type" content="website" />
-                        <meta
-                            property="og:url"
-                            content="https://siddhantshr.me/"
-                        />
-                        <meta property="og:title" content="S1D" />
-                        <meta
-                            property="og:description"
-                            content="A stacked backend developer and a noob frontend developer ._."
-                        />
-                        <meta
-                            property="og:image"
-                            content={`${process.env.PUBLIC_URL}/assets/cat.png`}
-                        />
-
-                        <meta
-                            property="twitter:card"
-                            content="summary_large_image"
-                        />
-                        <meta
-                            property="twitter:url"
-                            content="https://siddhantshr.me/"
-                        />
-                        <meta
-                            property="twitter:title"
-                            content="siddhantshr.me"
-                        />
-                        <meta
-                            property="twitter:description"
-                            content="A stacked backend developer and a noob frontend developer ._."
-                        />
-                        <meta
-                            name="twitter:image"
-                            content={`${process.env.PUBLIC_URL}/assets/cat.png`}
-                        />
-                        <meta
-                            name="keywords"
-                            content="Discord Bots, Siddhant Sharma, Discord API, Hyena, Vaxin Alerts, Siddhant, AHiddenDonut"
-                        />
-                    </Helmet>
                     <Routes>
                         <Route
                             path="*"
