@@ -58,7 +58,7 @@ const BlogsIntro = () => {
                                     />
                                     <span className="flex-grow flex flex-col pl-3">
                                         <span className="title-font font-medium text-white">
-                                            Siddhant
+                                            S1D
                                         </span>
                                     </span>
                                 </a>
@@ -88,9 +88,9 @@ const BlogsIntro = () => {
                                     Discord bot making is a very useful project
                                     to learn how to use APIs and wrappers, with
                                     it being blown up in the recent years,
-                                    YouTubers like <strong>Swas.py</strong> have
-                                    been giving trash tutorials. Here's what you
-                                    need to learn...
+                                    YouTubers have been giving trash tutorials.
+                                    Here's what you need to learn... - Verified
+                                    Bot Dev
                                 </p>
                                 <a
                                     className="inline-flex items-center"
@@ -105,7 +105,55 @@ const BlogsIntro = () => {
                                     />
                                     <span className="flex-grow flex flex-col pl-3">
                                         <span className="title-font font-medium text-white">
-                                            Siddhant
+                                            S1D
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="py-8 px-4 lg:w-1/3">
+                        <div className="h-full flex items-start">
+                            <div className="w-12 flex-shrink-0 flex flex-col text-center leading-none">
+                                <span className="text-gray-400 pb-2 mb-2 border-b-2 border-gray-700">
+                                    Jul
+                                </span>
+                                <span className="font-medium text-lg leading-none text-gray-300 title-font">
+                                    15
+                                </span>
+                            </div>
+                            <div className="flex-grow pl-6">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-green-400 mb-1">
+                                    MISC.
+                                </h2>
+                                <a href="/blogs/photographies">
+                                    <h1 className="title-font text-xl font-medium text-white mb-3 underline">
+                                        Photographies
+                                    </h1>
+                                </a>
+                                <p className="leading-relaxed mb-5">
+                                    Alright some really trash photographies I am
+                                    trying to get into again. This link leads to
+                                    Google Drive folder for my trashy
+                                    photographies.
+                                    <br />
+                                    Basically, my bad experiments that went even
+                                    more badly.
+                                </p>
+                                <a
+                                    className="inline-flex items-center"
+                                    href="/blogs/discord-bots"
+                                >
+                                    <img
+                                        alt="blog"
+                                        src={`${process.env.PUBLIC_URL}/assets/img.jpeg`}
+                                        width="100"
+                                        height="100"
+                                        className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
+                                    />
+                                    <span className="flex-grow flex flex-col pl-3">
+                                        <span className="title-font font-medium text-white">
+                                            S1D
                                         </span>
                                     </span>
                                 </a>

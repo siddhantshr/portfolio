@@ -71,11 +71,23 @@ function App() {
                                 </>
                             }
                         ></Route>
+                        <Route
+                            exact
+                            path="/blogs/photographies"
+                            element={<Redirect />}
+                        ></Route>
                     </Routes>
                 </Router>
             )}
         </>
     )
+}
+
+function Redirect() {
+    window.location.replace(
+        "https://drive.google.com/drive/folders/1jh79c0HPXTwhVsHyG1TPseDUmoeWSsbc?usp=sharing"
+    )
+    return null
 }
 
 export default App
