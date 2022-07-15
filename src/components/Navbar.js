@@ -28,7 +28,7 @@ function Navbar() {
                                     </a>
 
                                     <a
-                                        href="#projects"
+                                        href="https://github.com/AHiddenDonut?tab=repositories"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
                                         Projects
