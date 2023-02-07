@@ -1,4 +1,4 @@
-import { useState, useEffect, Component } from "react"
+import { Component } from "react"
 import { getModels } from "./Models"
 const models = getModels()
 
@@ -152,7 +152,7 @@ class Lambda extends Component {
                                 ))}
                             </select>
                         </div>
-                        <a href="/" className="pb-8">
+                        <a href="/" className="pb-8 text-center">
                             <button
                                 type="button"
                                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -161,6 +161,21 @@ class Lambda extends Component {
                                 Home Page
                             </button>
                         </a>
+                        <div className="pb-8 text-center">
+                            <button
+                                type="button"
+                                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                onClick={(e) => this.setState({chatLog: [
+                                    {
+                                        user: "lambda",
+                                        message: "How can I help you today?",
+                                    },
+                                ]})}
+                            >
+                                <i class="fa-solid fa-plus px-6"></i>
+                                New Chat
+                            </button>
+                        </div>
                         <div
                             className="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-opacity-40	bg-red-800 text-red-400"
                             role="alert"

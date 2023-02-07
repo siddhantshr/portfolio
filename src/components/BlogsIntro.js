@@ -132,13 +132,9 @@ const BlogsIntro = () => {
                                     </h1>
                                 </a>
                                 <p className="leading-relaxed mb-5">
-                                    Alright some really trash photographies I am
-                                    trying to get into again. This link leads to
-                                    Google Drive folder for my trashy
-                                    photographies.
-                                    <br />
-                                    Basically, my bad experiments that went even
-                                    more badly.
+                                    Photographies.
+                                    <br /><br /><br /><br /><br />
+                                    ...
                                 </p>
                                 <a
                                     className="inline-flex items-center"
