@@ -11,7 +11,7 @@ const Hero = () => {
         } else {
             let formattedQuery = encodeURIComponent(query.replace(/ /g, "+"))
             window.open(
-                `https://github.com/search?q=user%3AAHiddenDonut+${formattedQuery}&type=repositories`,
+                `https://github.com/search?q=user%3Asiddhantshr+${formattedQuery}&type=repositories`,
                 "_blank"
             )
         }

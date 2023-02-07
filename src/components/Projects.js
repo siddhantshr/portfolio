@@ -81,7 +81,7 @@ const Projects = () => {
                                 </p>
                                 <div className="flex items-center flex-wrap">
                                     <a
-                                        href="https://github.com/AHiddenDonut/VaxinAlerts"
+                                        href="https://github.com/siddhantshr/VaxinAlerts"
                                         className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Learn More
@@ -123,7 +123,7 @@ const Projects = () => {
                                 </p>
                                 <div className="flex items-center flex-wrap ">
                                     <a
-                                        href="https://github.com/AHiddenDonut/auto-class-joiner"
+                                        href="https://github.com/siddhantshr/auto-class-joiner"
                                         className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Learn More

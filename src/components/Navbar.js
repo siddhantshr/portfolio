@@ -28,14 +28,14 @@ function Navbar() {
                                     </a>
 
                                     <a
-                                        href="https://github.com/AHiddenDonut?tab=repositories"
+                                        href="https://github.com/siddhantshr?tab=repositories"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
                                         Projects
                                     </a>
 
                                     <a
-                                        href="https://github.com/AHiddenDonut"
+                                        href="https://github.com/siddhantshr"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
                                         Github
@@ -134,7 +134,7 @@ function Navbar() {
                                 </a>
 
                                 <a
-                                    href="https://github.com/AHiddenDonut"
+                                    href="https://github.com/siddhantshr"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Github
