@@ -51,7 +51,7 @@ const BlogsIntro = () => {
                                 >
                                     <img
                                         alt="blog"
-                                        src={`${process.env.PUBLIC_URL}/assets/img.jpeg`}
+                                        src={`${process.env.PUBLIC_URL}/assets/cat.png`}
                                         width="100"
                                         height="100"
                                         className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
@@ -98,7 +98,7 @@ const BlogsIntro = () => {
                                 >
                                     <img
                                         alt="blog"
-                                        src={`${process.env.PUBLIC_URL}/assets/img.jpeg`}
+                                        src={`${process.env.PUBLIC_URL}/assets/cat.png`}
                                         width="100"
                                         height="100"
                                         className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
@@ -146,7 +146,7 @@ const BlogsIntro = () => {
                                 >
                                     <img
                                         alt="blog"
-                                        src={`${process.env.PUBLIC_URL}/assets/img.jpeg`}
+                                        src={`${process.env.PUBLIC_URL}/assets/cat.png`}
                                         width="100"
                                         height="100"
                                         className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
