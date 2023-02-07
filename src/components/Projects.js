@@ -75,9 +75,9 @@ const Projects = () => {
                                     Vaxin Alerts
                                 </h1>
                                 <p className="leading-relaxed mb-3">
-                                    A useful website ( now closed cuz no use lol
-                                    ) for monitoring Vaccination Centers. Get
-                                    instant telegram updates.
+                                    A useful website ( now archived ) for
+                                    monitoring Vaccination Centers. Get instant
+                                    telegram updates.
                                 </p>
                                 <div className="flex items-center flex-wrap">
                                     <a

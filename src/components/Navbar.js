@@ -41,19 +41,19 @@ function Navbar() {
                                         Github
                                     </a>
 
-                                    {/* <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Calendar
-                  </a>
+                                    <a
+                                        href="/lambda"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Lambda
+                                    </a>
 
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Reports
-                  </a> */}
+                                    <a
+                                        href="/maverick"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Maverick
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -140,19 +140,19 @@ function Navbar() {
                                     Github
                                 </a>
 
-                                {/* <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Calendar
-                </a>
+                                <a
+                                    href="/lambda"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Lambda
+                                </a>
 
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Reports
-                </a> */}
+                                <a
+                                    href="/maverick"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Maverick
+                                </a>
                             </div>
                         </div>
                     )}

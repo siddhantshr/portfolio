@@ -10,6 +10,7 @@ import Notfound from "./components/Notfound"
 import BlogsIntro from "./components/BlogsIntro"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
+import Lambda from "./components/Lambda"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
@@ -76,6 +77,16 @@ function App() {
                             path="/blogs/photographies"
                             element={<Redirect />}
                         ></Route>
+                        <Route
+                            exact
+                            path="/lambda"
+                            element={<Lambda />}
+                        ></Route>
+                        <Route
+                            exact
+                            path="/maverick"
+                            element={<Redirect2 />}
+                        ></Route>
                     </Routes>
                 </Router>
             )}
@@ -87,6 +98,11 @@ function Redirect() {
     window.location.replace(
         "https://drive.google.com/drive/folders/1jh79c0HPXTwhVsHyG1TPseDUmoeWSsbc?usp=sharing"
     )
+    return null
+}
+
+function Redirect2() {
+    window.location.replace("https://maverick.sidshr.xyz/")
     return null
 }
 
