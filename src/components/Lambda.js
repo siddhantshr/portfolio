@@ -1,5 +1,7 @@
 import { Component } from "react"
 import { getModels } from "./Models"
+import { useMediaQuery } from "react-responsive"
+import "./Lambda.css"
 const models = getModels()
 
 class Lambda extends Component {
@@ -14,6 +16,7 @@ class Lambda extends Component {
                 },
             ],
             currentModel: "text-davinci-003",
+            sidebar: true,
         }
         // this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -87,13 +90,26 @@ class Lambda extends Component {
         }
     }
 
+    toggleSidebar = () => {
+        this.setState({ sidebar: !this.state.sidebar })
+        console.log(this.state.sidebar)
+    }
+
     render() {
         return (
             <div className="flex h-screen antialiased text-white">
                 <div className="flex flex-row h-full w-full overflow-x-hidden">
-                    <div className="flex flex-col py-8 pl-6 pr-2 w-64 bg-gray-800 flex-shrink-0">
+                    <div
+                        className={`flex flex-col py-8 pl-6 pr-2 w-64 bg-gray-800 flex-shrink-0 sidebar overflow-x-auto ${
+                            this.state.sidebar === false ? "show" : "hide"
+                        }`}
+                    >
                         <div className="flex flex-row items-center justify-center h-12 w-full">
-                            <div className="ml-2 font-bold text-2xl">
+                            <i
+                                onClick={this.toggleSidebar}
+                                className="fa-solid fa-bars pl-2 bars"
+                            ></i>
+                            <div className="ml-2 font-bold mx-auto px-8 text-2xl">
                                 Lambda
                             </div>
                         </div>
@@ -165,12 +181,17 @@ class Lambda extends Component {
                             <button
                                 type="button"
                                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                onClick={(e) => this.setState({chatLog: [
-                                    {
-                                        user: "lambda",
-                                        message: "How can I help you today?",
-                                    },
-                                ]})}
+                                onClick={(e) =>
+                                    this.setState({
+                                        chatLog: [
+                                            {
+                                                user: "lambda",
+                                                message:
+                                                    "How can I help you today?",
+                                            },
+                                        ],
+                                    })
+                                }
                             >
                                 <i class="fa-solid fa-plus px-6"></i>
                                 New Chat
@@ -207,6 +228,10 @@ class Lambda extends Component {
                                 className="flex flex-col h-full overflow-x-auto mb-4"
                                 id="block"
                             >
+                                <i
+                                    onClick={this.toggleSidebar}
+                                    className="fa-solid fa-bars bars"
+                                ></i>
                                 <div className="flex flex-col h-full text-gray-900">
                                     <div className="grid grid-cols-12 gap-y-2">
                                         {this.state.chatLog.map(

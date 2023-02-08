@@ -133,7 +133,11 @@ const BlogsIntro = () => {
                                 </a>
                                 <p className="leading-relaxed mb-5">
                                     Photographies.
-                                    <br /><br /><br /><br /><br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
                                     ...
                                 </p>
                                 <a
