@@ -1,6 +1,5 @@
 import { Component } from "react"
 import { getModels } from "./Models"
-import { useMediaQuery } from "react-responsive"
 import "./Lambda.css"
 const models = getModels()
 
