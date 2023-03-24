@@ -11,6 +11,7 @@ import BlogsIntro from "./components/BlogsIntro"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
 import Lambda from "./components/Lambda"
+// import ParticleBackground from "./components/ParticleBackground"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                             path="/"
                             element={
                                 <>
+                                    {/* <ParticleBackground/> */}
                                     <Navbar />
                                     <Hero />
                                     <Projects />

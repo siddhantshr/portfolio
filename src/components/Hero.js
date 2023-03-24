@@ -31,13 +31,14 @@ const Hero = () => {
                 <div className="container mx-auto flex px-5 py-32 md:flex-row flex-col items-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-                            Hey there,
+                            Hello,
                         </h1>
                         <p className="mb-8 leading-relaxed">
-                            I'm Siddhant, a stacked backend developer and a noob
-                            frontend developer ._.
-                            <br></br>I started coding{" "}
-                            {get_years_ago(1604581920)} year(s) ago.
+                            I'm Siddhant, a full stack developer.
+                            <br/><br/>I have been coding since{" "}
+                            {get_years_ago(1604581920)} years.
+                            This website showcases my work and provides insights into my experiences as a developer.
+                            Browse my portfolio or contact me for collaboration and opportunities.
                         </p>
                         <form onSubmit={submit}>
                             <div className="flex w-full md:justify-start justify-center items-end">
