@@ -34,9 +34,6 @@ const LoginScreen = () => {
             }
         )
 
-        setPwd("")
-        setUsr("")
-
         const data = await response.json()
 
         if (data.accessToken === null) {
@@ -44,6 +41,8 @@ const LoginScreen = () => {
             await timeout(5000)
             setCurv("coderain")
         } else {
+            setPwd("")
+            setUsr("")
             const decoded = jwt(data.accessToken)
 
             cookies.set("jwt_auth", data.accessToken, {
