@@ -2,7 +2,7 @@ export function getModels() {
     return [
         "babbage",
         "ada",
-        // 'text-davinci-003',
+        "text-davinci-003",
         "davinci",
         "text-embedding-ada-002",
         "babbage-code-search-code",
@@ -52,5 +52,7 @@ export function getModels() {
         "curie",
         "text-similarity-davinci-001",
         "davinci-similarity",
+        "gpt-3.5-turbo-0301",
+        // "gpt-3.5-turbo"
     ]
 }

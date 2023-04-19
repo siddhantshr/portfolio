@@ -1,0 +1,45 @@
+.cobra-parent {
+    width: 100%;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cobra-login {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.modal {
+    font-size: 60px;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .modal {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 450px) {
+    .modal {
+        font-size: 30px;
+    }
+}

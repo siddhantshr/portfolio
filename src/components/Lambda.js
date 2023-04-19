@@ -10,11 +10,11 @@ class Lambda extends Component {
             input: "",
             chatLog: [
                 {
-                    user: "lambda",
-                    message: "How can I help you today?",
+                    role: "system",
+                    content: "How can I help you today?",
                 },
             ],
-            currentModel: "text-davinci-003",
+            currentModel: "gpt-3.5-turbo",
             sidebar: true,
         }
         // this.handleSubmit = this.handleSubmit.bind(this)
@@ -36,29 +36,24 @@ class Lambda extends Component {
         e.preventDefault()
         let chatLogNew = [
             ...this.state.chatLog,
-            { user: "me", message: this.state.input },
-            { user: "lambda", message: "Typing..." },
+            { role: "user", content: this.state.input },
+            { role: "system", content: "Typing..." },
         ]
         // let msginput = this.state.input
         this.setState({ chatLog: chatLogNew })
         this.setState({ input: "" })
         this.scrollToBottom()
 
-        const messages = chatLogNew
-            .slice(0, -1)
-            .map((message) => message.message)
-            .join("\n")
-
         try {
             const response = await fetch(
-                "https://maverick.sidshr.xyz/getOpenaiResponse",
+                "https://maverick-1-x4741070.deta.app/getOpenaiResponse",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        message: messages,
+                        message: chatLogNew.slice(1, -1),
                         model: this.state.currentModel,
                     }),
                 }
@@ -69,7 +64,7 @@ class Lambda extends Component {
             this.setState({
                 chatLog: [
                     ...chatLogNew,
-                    { user: "lambda", message: data.message },
+                    { role: "system", content: data.message },
                 ],
             })
             this.scrollToBottom()
@@ -79,8 +74,8 @@ class Lambda extends Component {
                 chatLog: [
                     ...chatLogNew,
                     {
-                        user: "lambda",
-                        message:
+                        role: "system",
+                        content:
                             "Hey, I am currently not available, please try again later.",
                     },
                 ],
@@ -154,11 +149,11 @@ class Lambda extends Component {
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             >
                                 <option
-                                    key="text-davinci-003"
-                                    value="text-davinci-003"
+                                    key="gpt-3.5-turbo"
+                                    value="gpt-3.5-turbo"
                                     selected
                                 >
-                                    text-davinci-003
+                                    gpt-3.5-turbo
                                 </option>
                                 {models.map((model, index) => (
                                     <option key={model} value={model}>
@@ -184,8 +179,8 @@ class Lambda extends Component {
                                     this.setState({
                                         chatLog: [
                                             {
-                                                user: "lambda",
-                                                message:
+                                                role: "system",
+                                                content:
                                                     "How can I help you today?",
                                             },
                                         ],
@@ -307,14 +302,14 @@ const ChatMessage = ({ message }) => {
     return (
         <div
             className={
-                message.user === "me"
+                message.role === "user"
                     ? "col-start-6 col-end-13 p-3 rounded-lg"
                     : "col-start-1 col-end-8 p-3 rounded-lg"
             }
         >
             <div
                 className={
-                    message.user === "me"
+                    message.role === "user"
                         ? "flex items-center justify-start flex-row-reverse"
                         : "flex flex-row items-center "
                 }
@@ -326,18 +321,18 @@ const ChatMessage = ({ message }) => {
                         align="center"
                         alt=""
                         src={`${process.env.PUBLIC_URL}/assets/${
-                            message.user === "me" ? "user-icon" : "lambda"
+                            message.role === "user" ? "user-icon" : "lambda"
                         }.png`}
                     ></img>
                 </div>
                 <div
                     className={
-                        message.user === "me"
+                        message.role === "user"
                             ? "relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                             : "relative ml-3 text-sm bg-gray-200 py-2 px-4 shadow rounded-xl"
                     }
                 >
-                    {message.message}
+                    {message.content}
                 </div>
             </div>
         </div>

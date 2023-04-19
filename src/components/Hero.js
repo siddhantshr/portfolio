@@ -35,10 +35,12 @@ const Hero = () => {
                         </h1>
                         <p className="mb-8 leading-relaxed">
                             I'm Siddhant, a full stack developer.
-                            <br/><br/>I have been coding since{" "}
-                            {get_years_ago(1604581920)} years.
-                            This website showcases my work and provides insights into my experiences as a developer.
-                            Browse my portfolio or contact me for collaboration and opportunities.
+                            <br />
+                            <br />I have been coding since{" "}
+                            {get_years_ago(1604581920)} years. This website
+                            showcases my work and provides insights into my
+                            experiences as a developer. Browse my portfolio or
+                            contact me for collaboration and opportunities.
                         </p>
                         <form onSubmit={submit}>
                             <div className="flex w-full md:justify-start justify-center items-end">

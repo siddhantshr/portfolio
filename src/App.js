@@ -11,7 +11,10 @@ import BlogsIntro from "./components/BlogsIntro"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
 import Lambda from "./components/Lambda"
-// import ParticleBackground from "./components/ParticleBackground"
+import LoginScreen from "./components/Cobra/LoginScreen"
+import SuperUser from "./components/Cobra/SuperUser"
+import ProtectedRoute from "./components/ProtectedRoute"
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
@@ -89,6 +92,30 @@ function App() {
                             path="/maverick"
                             element={<Redirect2 />}
                         ></Route>
+                        <Route
+                            exact
+                            path="/cobra"
+                            element={
+                                <>
+                                    <LoginScreen />
+                                </>
+                            }
+                        ></Route>
+                        <Route
+                            exact
+                            path="/cobra/superuser"
+                            element={<ProtectedRoute />}
+                        >
+                            <Route
+                                exact
+                                path="/cobra/superuser"
+                                element={
+                                    <>
+                                        <SuperUser />
+                                    </>
+                                }
+                            />
+                        </Route>
                     </Routes>
                 </Router>
             )}
