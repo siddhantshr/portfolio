@@ -21,7 +21,7 @@ const LoginScreen = () => {
         e.preventDefault()
 
         const response = await fetch(
-            "https://maverick-1-x4741070.deta.app/confirmCredentials",
+            "https://maverick.sidshr.xyz/confirmCredentials",
             {
                 method: "POST",
                 headers: {

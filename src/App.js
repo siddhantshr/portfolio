@@ -26,6 +26,16 @@ function App() {
             setLoading(false)
         }, Math.random() * (3501 - 1000) + 1000)
     }, [])
+    // useEffect(() => {
+    //     const handleContextmenu = e => {
+    //         e.preventDefault()
+    //     }
+    //     document.addEventListener('contextmenu', handleContextmenu)
+    //     return function cleanup() {
+    //         document.removeEventListener('contextmenu', handleContextmenu)
+    //     }
+    // }, [ ]) // <-- right click protection
+
     return (
         <>
             {loading ? (

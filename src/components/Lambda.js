@@ -46,7 +46,7 @@ class Lambda extends Component {
 
         try {
             const response = await fetch(
-                "https://maverick-1-x4741070.deta.app/getOpenaiResponse",
+                "https://maverick.sidshr.xyz/getOpenaiResponse",
                 {
                     method: "POST",
                     headers: {
