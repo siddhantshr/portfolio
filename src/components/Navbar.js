@@ -54,6 +54,12 @@ function Navbar() {
                                     >
                                         Maverick
                                     </a>
+                                    <a
+                                        href="/cobra"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Cobra
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -152,6 +158,13 @@ function Navbar() {
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Maverick
+                                </a>
+
+                                <a
+                                    href="/cobra"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Cobra
                                 </a>
                             </div>
                         </div>
