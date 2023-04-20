@@ -2,7 +2,7 @@ import React from "react"
 import "./Cobra.css"
 import Cookies from "universal-cookie"
 import { useNavigate } from "react-router-dom"
-import useSound from 'use-sound';
+import useSound from "use-sound"
 import sound from "./numbers.mp3"
 
 const SuperUser = () => {
@@ -11,7 +11,7 @@ const SuperUser = () => {
     })
     const [loading, setLoading] = React.useState(false)
     const [muted, setMuted] = React.useState(true)
-    const [play, {stop}] = useSound(sound )
+    const [play, { stop }] = useSound(sound)
     const cookies = new Cookies()
 
     React.useEffect(() => {
@@ -38,13 +38,10 @@ const SuperUser = () => {
     async function checkAuth() {
         let authToken = cookies.get("jwt_auth")
 
-        const response = await fetch(
-            "https://maverick.sidshr.xyz/checkAuth",
-            {
-                method: "GET",
-                headers: { authorization: `Bearer ${authToken}` },
-            }
-        )
+        const response = await fetch("https://maverick.sidshr.xyz/checkAuth", {
+            method: "GET",
+            headers: { authorization: `Bearer ${authToken}` },
+        })
 
         if (response.status !== 200) {
             stop()
@@ -92,7 +89,7 @@ const SuperUser = () => {
                 WELCOME SUPERUSER!
             </div>
             <div
-            className={`cobra-login ${loading === true ? "" : "invisible"}`}
+                className={`cobra-login ${loading === true ? "" : "invisible"}`}
             >
                 <div className="mx-auto text-green-600 font-extrabold modal">
                     ACCESS GRANTED
@@ -100,16 +97,30 @@ const SuperUser = () => {
             </div>
             <div className="icons">
                 <div>
-                    <i onClick={() => window.location.href = "/"} className="fa-solid fa-house-user text-5xl py-4 px-6"></i>
+                    <i
+                        onClick={() => (window.location.href = "/")}
+                        className="fa-solid fa-house-user text-5xl py-4 px-6"
+                    ></i>
                 </div>
                 <div>
-                    <i onClick={() => logout()} className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"></i>
+                    <i
+                        onClick={() => logout()}
+                        className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"
+                    ></i>
                 </div>
                 <div>
-                    <i onClick={() => mute()} className="fa-solid fa-microphone-lines text-5xl py-4 px-6"></i>
+                    <i
+                        onClick={() => mute()}
+                        className="fa-solid fa-microphone-lines text-5xl py-4 px-6"
+                    ></i>
                 </div>
                 <div>
-                    <img onClick={() => lambdaToggle()} className="py-4 px-5 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/lambda.png`} alt="" />
+                    <img
+                        onClick={() => lambdaToggle()}
+                        className="py-4 px-5 w-22 h-20"
+                        src={`${process.env.PUBLIC_URL}/assets/lambda.png`}
+                        alt=""
+                    />
                 </div>
             </div>
         </>
