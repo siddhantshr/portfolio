@@ -64,7 +64,7 @@ const LoginScreen = () => {
             <div
                 className={`cobra-login ${curv === "demon" ? "" : "invisible"}`}
             >
-                <div className="mx-auto text-red-500 font-extrabold modal">
+                <div className="mx-auto text-red-500 font-extrabold modal blink">
                     ACCESS DENIED
                 </div>
             </div>
@@ -82,6 +82,7 @@ const LoginScreen = () => {
                                 src={`${process.env.PUBLIC_URL}/assets/logo-2.png`}
                                 alt="logo"
                             />
+                            <span className="pt-4 blink">Secure SUPERUSER Panel</span>
                         </a>
                         <form
                             className="mx-auto max-w-lg rounded-lg border-solid border-2 border-sky-500 bg-stone-900"
