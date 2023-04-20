@@ -56,8 +56,11 @@ video {
     color: rgb(217,50,46);
 }
 
-.icons2 {
-    align-items: end;
+.icons div i:hover {
+    opacity: 0.5;
+}
+.icons div img:hover {
+    opacity: 0.5;
 }
 
 #welcome {

@@ -99,19 +99,17 @@ const SuperUser = () => {
                 </div>
             </div>
             <div className="icons">
-                <div onClick={() => window.location.href = "/"}>
-                    <img className="py-4 px-6 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/superuser-icons/home.png`} alt="" />
+                <div>
+                    <i onClick={() => window.location.href = "/"} className="fa-solid fa-house-user text-5xl py-4 px-6"></i>
                 </div>
-                <div onClick={() => logout()}>
-                    <i className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"></i>
+                <div>
+                    <i onClick={() => logout()} className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"></i>
                 </div>
-                <div onClick={() => mute()}>
-                    <i className="fa-solid fa-microphone-lines text-5xl py-4 px-6"></i>
+                <div>
+                    <i onClick={() => mute()} className="fa-solid fa-microphone-lines text-5xl py-4 px-6"></i>
                 </div>
-            </div>
-            <div className="icons icons2">
-                <div onClick={() => lambdaToggle()}>
-                    <img className="py-4 px-6 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/lambda.png`} alt="" />
+                <div>
+                    <img onClick={() => lambdaToggle()} className="py-4 px-5 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/lambda.png`} alt="" />
                 </div>
             </div>
         </>
