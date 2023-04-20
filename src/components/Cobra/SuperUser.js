@@ -99,12 +99,12 @@ const SuperUser = () => {
                 </div>
             </div>
             <div className="icons">
-                <div onClick={() => window.location.href = "/"}>
+                <a href="/">
                     <i className="fa-solid fa-house-user text-5xl py-4 px-6"></i>
-                </div>
-                <div onClick={() => logout()}>
+                </a>
+                <a href="#" onClick={() => logout()}>
                     <i className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"></i>
-                </div>
+                </a>
                 <div onClick={() => mute()}>
                     <i className="fa-solid fa-microphone-lines text-5xl py-4 px-6"></i>
                 </div>
