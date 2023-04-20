@@ -99,17 +99,17 @@ const SuperUser = () => {
                 </div>
             </div>
             <div className="icons">
-                <a href="/">
-                    <i className="fa-solid fa-house-user text-5xl py-4 px-6"></i>
-                </a>
-                <a href="#" onClick={() => logout()}>
+                <div onClick={() => window.location.href = "/"}>
+                    <img className="py-4 px-6 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/superuser-icons/home.png`} alt="" />
+                </div>
+                <div onClick={() => logout()}>
                     <i className="fa-solid fa-right-from-bracket text-5xl py-4 px-6"></i>
-                </a>
+                </div>
                 <div onClick={() => mute()}>
                     <i className="fa-solid fa-microphone-lines text-5xl py-4 px-6"></i>
                 </div>
             </div>
-            <div className="icons2">
+            <div className="icons icons2">
                 <div onClick={() => lambdaToggle()}>
                     <img className="py-4 px-6 w-22 h-20" src={`${process.env.PUBLIC_URL}/assets/lambda.png`} alt="" />
                 </div>
