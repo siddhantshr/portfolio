@@ -34,7 +34,7 @@ const Hero = () => {
                             Hello,
                         </h1>
                         <p className="mb-8 leading-relaxed">
-                            I'm Siddhant, a full stack developer.
+                            I'm Siddhant, a student developer.
                             <br />
                             <br />I have been coding since{" "}
                             {get_years_ago(1604581920)} years. This website
@@ -109,9 +109,9 @@ const Hero = () => {
                     </div>
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                         <div className="sign">
-                            <span className="sign__word">Full stack</span>
+                            <span className="sign__word">Student</span>
                             {/* <span className="sign__word">stack</span> */}
-                            <span className="sign__word">dev</span>
+                            <span className="sign__word">Dev!</span>
                         </div>
                     </div>
                 </div>

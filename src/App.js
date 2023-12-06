@@ -14,6 +14,7 @@ import Lambda from "./components/Lambda"
 import LoginScreen from "./components/Cobra/LoginScreen"
 import SuperUser from "./components/Cobra/SuperUser"
 import ProtectedRoute from "./components/ProtectedRoute"
+import Competitions from "./components/Competitions"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
@@ -60,6 +61,7 @@ function App() {
                                     <Navbar />
                                     <Hero />
                                     <Projects />
+                                    <Competitions />
                                     <BlogsIntro />
                                     <Footer />
                                 </>

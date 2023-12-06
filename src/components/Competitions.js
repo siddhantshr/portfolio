@@ -1,0 +1,154 @@
+import React, { useEffect } from "react"
+import Aos from "aos"
+import "aos/dist/aos.css"
+
+const Competitions = () => {
+    useEffect(() => {
+        Aos.init({ duration: 500, once: true })
+    })
+    return (
+        <section className="text-gray-400 body-font" id="competitons">
+            <div className="container px-5 py-16 mx-auto">
+                <div className="flex flex-col text-center w-full mb-24">
+                    <h2 className="text-xs text-green-400 tracking-widest font-medium title-font mb-1">
+                        Competitive Life
+                    </h2>
+                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
+                        My Achievements
+                    </h1>
+                </div>
+                <div className="flex flex-wrap -m-4">
+                    <div className="p-4 md:w-1/3" data-aos="fade-up">
+                        <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+                            <img
+                                className="lg:h-48 md:h-36 w-full object-cover object-center"
+                                src={`${process.env.PUBLIC_URL}/assets/logo_wca.png`}
+                                alt="hyena"
+                            />
+                            <div className="p-6">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+                                    Cubing
+                                </h2>
+                                <h1 className="title-font text-lg font-medium text-white mb-3">
+                                    Speedcubing
+                                </h1>
+                                <p className="leading-relaxed mb-3">
+                                    I began my speedcubing journey with a single 
+                                    twist and turn, unlocking a world of 
+                                    precision and strategy. I set my record for
+                                    3x3 rubik's cube at 11.12 seconds
+                                </p>
+                                {/* <div className="flex items-center flex-wrap ">
+                                    <a
+                                        href=""
+                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                    >
+                                        Learn More
+                                        <svg
+                                            className="w-4 h-4 ml-2"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M5 12h14" />
+                                            <path d="M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4 md:w-1/3" data-aos="fade-up">
+                        <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+                            <img
+                                className="lg:h-48 md:h-36 w-full object-cover object-center"
+                                src={`${process.env.PUBLIC_URL}/assets/logo_techfest.jpeg`}
+                                alt="techfest"
+                            />
+                            <div className="p-6">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+                                    Technological
+                                </h2>
+                                <h1 className="title-font text-lg font-medium text-white mb-3">
+                                    Techfest
+                                </h1>
+                                <p className="leading-relaxed mb-3">
+                                    I won two competitions at IIT Bombay Techfest: 
+                                    RoboVr and Games of Code. Winning both shows 
+                                    I can do well in different technical areas.
+                                </p>
+                                {/* <div className="flex items-center flex-wrap">
+                                    <a
+                                        href="https://github.com/siddhantshr/VaxinAlerts"
+                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                    >
+                                        Learn More
+                                        <svg
+                                            className="w-4 h-4 ml-2"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M5 12h14" />
+                                            <path d="M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4 md:w-1/3" data-aos="fade-up">
+                        <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+                            <img
+                                className="lg:h-48 md:h-36 w-full object-cover object-center"
+                                src={`${process.env.PUBLIC_URL}/assets/idea_logo.png`}
+                                alt="blog"
+                            />
+                            <div className="p-6">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+                                    Olympiads
+                                </h2>
+                                <h1 className="title-font text-lg font-medium text-white mb-3">
+                                    Cyber Olympiads
+                                </h1>
+                                <p className="leading-relaxed mb-3">
+                                    I secured victory in two prestigious Olympiads, 
+                                    the Unified Cyber Olympiads and National Cyber 
+                                    Olympiads.
+                                </p>
+                                {/* <div className="flex items-center flex-wrap ">
+                                    <a
+                                        href="https://github.com/siddhantshr/auto-class-joiner"
+                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                    >
+                                        Learn More
+                                        <svg
+                                            className="w-4 h-4 ml-2"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M5 12h14" />
+                                            <path d="M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Competitions
