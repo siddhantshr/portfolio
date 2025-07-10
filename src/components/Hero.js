@@ -28,7 +28,17 @@ const Hero = () => {
     return (
         <>
             <section className="text-gray-400 body-font" data-aos="fade">
-                <div className="container mx-auto flex px-5 py-32 md:flex-row flex-col items-center">
+                <div className="flex justify-center items-center mb-8">
+                    <img
+                        src={`${process.env.PUBLIC_URL}/assets/pfp.jpeg`}
+                        alt="Profile"
+                        // enlarge width 30% of the screen and make it completely round
+                        style={{ width: "30%", height: "auto" }}
+                        data-aos="fade-up"
+                        className="rounded-xl object-cover border-4 border-blue-500 shadow-lg"
+                    />
+                </div>
+                <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center" data-aos="zoom-out">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
                             Hello,
@@ -55,7 +65,7 @@ const Hero = () => {
                                         type="text"
                                         id="hero-field"
                                         name="hero-field"
-                                        className="w-full bg-gray-800 rounded bg-opacity-40 border border-gray-700 focus:ring-2 focus:ring-green-900 focus:bg-transparent focus:border-green-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                        className="w-full bg-gray-800 rounded bg-opacity-40 border border-gray-700 focus:ring-2 focus:ring-blue-900 focus:bg-transparent focus:border-blue-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                         value={query}
                                         onChange={(e) =>
                                             setQuery(e.target.value)
@@ -64,7 +74,7 @@ const Hero = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
+                                    className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
                                     id="_btn"
                                 >
                                     Search

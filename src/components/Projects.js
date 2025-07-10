@@ -7,18 +7,18 @@ const Projects = () => {
         Aos.init({ duration: 500, once: true })
     })
     return (
-        <section className="text-gray-400 body-font" id="projects">
+        <section className="text-gray-400 body-font" id="projects" data-aos="fade-up">
             <div className="container px-5 py-16 mx-auto">
                 <div className="flex flex-col text-center w-full mb-24">
-                    <h2 className="text-xs text-green-400 tracking-widest font-medium title-font mb-1">
-                        GITHUB
+                    <h2 className="text-xs text-red-400 tracking-widest font-medium title-font mb-1">
+                        DEVELOPEMENT
                     </h2>
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
                         Projects & Repositories
                     </h1>
                 </div>
                 <div className="flex flex-wrap -m-4">
-                    <div className="p-4 md:w-1/3" data-aos="fade-up">
+                    <div className="p-4 md:w-1/3">
                         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                             <img
                                 className="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -40,7 +40,7 @@ const Projects = () => {
                                 <div className="flex items-center flex-wrap ">
                                     <a
                                         href="https://github.com/Hyena-Bot/Hyena/"
-                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                        className="text-red-400 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Learn More
                                         <svg
@@ -82,7 +82,7 @@ const Projects = () => {
                                 <div className="flex items-center flex-wrap">
                                     <a
                                         href="https://github.com/siddhantshr/VaxinAlerts"
-                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                        className="text-red-400 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Learn More
                                         <svg
@@ -106,7 +106,7 @@ const Projects = () => {
                         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                             <img
                                 className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                src={`${process.env.PUBLIC_URL}/assets/acj.png`}
+                                src={`${process.env.PUBLIC_URL}/assets/spades.png`}
                                 alt="blog"
                             />
                             <div className="p-6">
@@ -114,17 +114,15 @@ const Projects = () => {
                                     PUBLIC UTILS
                                 </h2>
                                 <h1 className="title-font text-lg font-medium text-white mb-3">
-                                    Auto className Joiner
+                                    Spades
                                 </h1>
                                 <p className="leading-relaxed mb-3">
-                                    A code that will help you join your classes
-                                    automatically, without needing for you being
-                                    there.
+                                    By utilising advanced computer vision algorithms and artificial intelligence, the system can accurately detect and track suspicious activities related to package theft in real-time.
                                 </p>
                                 <div className="flex items-center flex-wrap ">
                                     <a
-                                        href="https://github.com/siddhantshr/auto-class-joiner"
-                                        className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                        href="https://docs.google.com/document/d/11P1194ijKxvr_htKbo5TaKo04spvuXRxGn0M9z9Lo6Y/edit?usp=sharing"
+                                        className="text-red-400 inline-flex items-center md:mb-2 lg:mb-0"
                                     >
                                         Learn More
                                         <svg
@@ -164,12 +162,12 @@ const Projects = () => {
                             <p className="leading-relaxed mb-3">
                                 The customisable and self hostable Hyena Bot.
                                 Configure moderation, automoderation etc.{" "}
-                                <strong>New! BETA</strong>
+                                <strong>Archived</strong>
                             </p>
                             <div className="flex items-center flex-wrap ">
                                 <a
                                     href="https://github.com/Hyena-Bot/Hyena-Hostable"
-                                    className="text-green-400 inline-flex items-center md:mb-2 lg:mb-0"
+                                    className="text-red-400 inline-flex items-center md:mb-2 lg:mb-0"
                                 >
                                     Learn More
                                     <svg

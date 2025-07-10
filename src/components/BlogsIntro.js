@@ -7,11 +7,11 @@ const BlogsIntro = () => {
         Aos.init({ duration: 1000, once: true })
     })
     return (
-        <section className="text-gray-400 body-font" data-aos="fade-up">
+        <section className="text-gray-400 body-font" data-aos="fade-up" id="blogs">
             <div className="container px-5 py-12 mx-auto">
                 <div className="flex flex-wrap -mx-4 -my-8 items-center justify-center">
                     <div className="flex flex-col text-center w-full mb-12">
-                        <h2 className="text-xs text-green-400 tracking-widest font-medium title-font mb-1">
+                        <h2 className="text-xs text-red-400 tracking-widest font-medium title-font mb-1">
                             BLOGS
                         </h2>
                         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
@@ -25,11 +25,11 @@ const BlogsIntro = () => {
                                     Mar
                                 </span>
                                 <span className="font-medium text-lg leading-none text-gray-300 title-font">
-                                    23
+                                    2022
                                 </span>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="tracking-widest text-xs title-font font-medium text-green-400 mb-1">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-red-400 mb-1">
                                     APIs
                                 </h2>
                                 <a href="/blogs/requests">
@@ -72,11 +72,11 @@ const BlogsIntro = () => {
                                     Mar
                                 </span>
                                 <span className="font-medium text-lg leading-none text-gray-300 title-font">
-                                    23
+                                    2022
                                 </span>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="tracking-widest text-xs title-font font-medium text-green-400 mb-1">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-red-400 mb-1">
                                     DISCORD API
                                 </h2>
                                 <a href="/blogs/discord-bots">
@@ -87,8 +87,8 @@ const BlogsIntro = () => {
                                 <p className="leading-relaxed mb-5">
                                     Discord bot making is a very useful project
                                     to learn how to use APIs and wrappers, with
-                                    it being blown up in the recent years,
-                                    YouTubers have been giving trash tutorials.
+                                    it being blown up in the recent years, learn
+                                    the basic ideas of how to make one.
                                     Here's what you need to learn... - Verified
                                     Bot Dev
                                 </p>
@@ -119,11 +119,11 @@ const BlogsIntro = () => {
                                     Jul
                                 </span>
                                 <span className="font-medium text-lg leading-none text-gray-300 title-font">
-                                    15
+                                    2022
                                 </span>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="tracking-widest text-xs title-font font-medium text-green-400 mb-1">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-red-400 mb-1">
                                     MISC.
                                 </h2>
                                 <a href="/blogs/photographies">
@@ -171,7 +171,7 @@ const BlogsIntro = () => {
                                 </span>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="tracking-widest text-xs title-font font-medium text-green-400 mb-1">
+                                <h2 className="tracking-widest text-xs title-font font-medium text-red-400 mb-1">
                                     CATEGORY
                                 </h2>
                                 <h1 className="title-font text-xl font-medium text-white mb-3">

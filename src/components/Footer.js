@@ -42,16 +42,16 @@ const Footer = () => {
                         <i className="fa-solid fa-at"></i>
                     </a>
                     <a
-                        href="https://instagram.com/siddhant_.31"
+                        href="https://instagram.com/sidsharma.31"
                         className="ml-3 text-gray-400"
                     >
                         <i className="fa-brands fa-instagram"></i>
                     </a>
                     <a
-                        href="https://discord.com/users/918703165648539700"
+                        href="https://linkedin.com/in/siddhant-sharma-660202214"
                         className="ml-3 text-gray-400"
                     >
-                        <i className="fa-brands fa-discord"></i>
+                        <i className="fa-brands fa-linkedin"></i>
                     </a>
                 </span>
             </div>

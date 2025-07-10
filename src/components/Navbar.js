@@ -42,13 +42,20 @@ function Navbar() {
                                     </a>
 
                                     <a
-                                        href="/lambda"
+                                        href="https://linkedin.com/in/siddhant-sharma-660202214"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
-                                        Lambda
+                                        LinkedIn
                                     </a>
 
                                     <a
+                                        href="#blogs"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Blogs
+                                    </a>
+
+                                    {/* <a
                                         href="/maverick"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
@@ -59,7 +66,7 @@ function Navbar() {
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                     >
                                         Cobra SSP
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </div>
@@ -147,13 +154,20 @@ function Navbar() {
                                 </a>
 
                                 <a
-                                    href="/lambda"
+                                    href="https://linkedin.com/in/siddhant-sharma-660202214"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
-                                    Lambda
+                                    LinkedIn
                                 </a>
 
                                 <a
+                                    href="#blogs"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    Blogs
+                                </a>
+
+                                {/* <a
                                     href="/maverick"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
@@ -165,7 +179,7 @@ function Navbar() {
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Cobra SSP
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     )}

@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import "./App.css"
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Preloader from "./components/Preloader"
 import Hero from "./components/Hero"
@@ -10,11 +10,12 @@ import Notfound from "./components/Notfound"
 import BlogsIntro from "./components/BlogsIntro"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
-import Lambda from "./components/Lambda"
-import LoginScreen from "./components/Cobra/LoginScreen"
-import SuperUser from "./components/Cobra/SuperUser"
-import ProtectedRoute from "./components/ProtectedRoute"
-import Competitions from "./components/Competitions"
+// import Lambda from "./components/Lambda"
+import Timeline from "./components/Timeline"
+// import LoginScreen from "./components/Cobra/LoginScreen"
+// import SuperUser from "./components/Cobra/SuperUser"
+// import ProtectedRoute from "./components/ProtectedRoute"
+// import Competitions from "./components/Competitions"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
@@ -57,11 +58,10 @@ function App() {
                             path="/"
                             element={
                                 <>
-                                    {/* <ParticleBackground/> */}
                                     <Navbar />
                                     <Hero />
+                                    <Timeline />
                                     <Projects />
-                                    <Competitions />
                                     <BlogsIntro />
                                     <Footer />
                                 </>
@@ -94,17 +94,7 @@ function App() {
                             path="/blogs/photographies"
                             element={<Redirect />}
                         ></Route>
-                        <Route
-                            exact
-                            path="/lambda"
-                            element={<Lambda />}
-                        ></Route>
-                        <Route
-                            exact
-                            path="/maverick"
-                            element={<Redirect2 />}
-                        ></Route>
-                        <Route
+                        {/* <Route
                             exact
                             path="/cobra"
                             element={
@@ -127,7 +117,7 @@ function App() {
                                     </>
                                 }
                             />
-                        </Route>
+                        </Route> */}
                     </Routes>
                 </Router>
             )}
@@ -137,14 +127,14 @@ function App() {
 
 function Redirect() {
     window.location.replace(
-        "https://drive.google.com/drive/folders/1jh79c0HPXTwhVsHyG1TPseDUmoeWSsbc?usp=sharing"
+        "/photos" // Change this to the correct path for your photography blog
     )
     return null
 }
 
-function Redirect2() {
-    window.location.replace("https://maverick.sidshr.xyz/")
-    return null
-}
+// function Redirect2() {
+//     window.location.replace("https://maverick.sidshr.xyz/")
+//     return null
+// }
 
 export default App
