@@ -44,12 +44,12 @@ const Hero = () => {
                             Hello,
                         </h1>
                         <p className="mb-8 leading-relaxed">
-                            I'm Siddhant, a student developer.
+                            I'm Siddhant, a Aerospace Engg student @IITB & a coding enthusiast.
                             <br />
                             <br />I have been coding since{" "}
                             {get_years_ago(1604581920)} years. This website
                             showcases my work and provides insights into my
-                            experiences as a developer. Browse my portfolio or
+                            experiences as a developer and aerospace student. Browse my portfolio or
                             contact me for collaboration and opportunities.
                         </p>
                         <form onSubmit={submit}>
@@ -121,7 +121,7 @@ const Hero = () => {
                         <div className="sign">
                             <span className="sign__word">Student</span>
                             {/* <span className="sign__word">stack</span> */}
-                            <span className="sign__word">Dev!</span>
+                            <span className="sign__word">Dev</span>
                         </div>
                     </div>
                 </div>
