@@ -33,9 +33,9 @@ const Hero = () => {
                         src={`${process.env.PUBLIC_URL}/assets/pfp.jpeg`}
                         alt="Profile"
                         // enlarge width 30% of the screen and make it completely round
-                        style={{ width: "30%", height: "auto" }}
+                        // style={{ width: "30%", height: "auto" }}
                         data-aos="fade-up"
-                        className="rounded-xl object-cover border-4 border-blue-500 shadow-lg"
+                        className="rounded-xl object-cover border-4 border-blue-500 shadow-lg hero_img"
                     />
                 </div>
                 <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center" data-aos="zoom-out">
