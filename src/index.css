@@ -331,7 +331,7 @@ html {
 
 
 
-/* make the hero image responsive */
+/* make the hero image responsive for phones */
 @media (max-width: 768px) {
     .hero_img {
         width: 60%;
