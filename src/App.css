@@ -23,6 +23,9 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -30,7 +33,16 @@ body {
     font-family: "Manrope", sans-serif;
     font-size: 15px;
     line-height: 1.7;
+    width: 100%;
     overflow-x: hidden;
+    overflow-x: clip;
+}
+
+#root,
+.portfolio-shell {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body.portfolio-theme {
@@ -140,6 +152,111 @@ a {
     gap: 2rem;
 }
 
+.nav-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    background: rgba(9, 14, 26, 0.9);
+    color: var(--text);
+}
+
+.nav-burger span {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-burger span:nth-child(1) {
+    transform: translateY(-5px);
+}
+
+.nav-burger span:nth-child(2) {
+    transform: translateY(0);
+}
+
+.nav-burger span:nth-child(3) {
+    transform: translateY(5px);
+}
+
+.nav-burger.is-open span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.nav-burger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-burger.is-open span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.nav-mobile-backdrop {
+    position: fixed;
+    inset: 64px 0 0;
+    z-index: 90;
+    border: 0;
+    background: rgba(2, 6, 12, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-mobile-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-mobile-menu {
+    position: fixed;
+    top: 72px;
+    right: 1rem;
+    left: 1rem;
+    z-index: 95;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.7rem;
+    border: 1px solid var(--border2);
+    border-radius: 14px;
+    background: rgba(5, 8, 15, 0.96);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-mobile-menu a {
+    display: block;
+    padding: 0.7rem 0.8rem;
+    border-radius: 9px;
+    color: var(--muted2);
+    font-family: "DM Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.1px;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+}
+
+.nav-mobile-menu a:hover {
+    color: var(--text);
+    background: rgba(74, 140, 255, 0.1);
+}
+
 .nav-links a {
     font-family: "DM Mono", monospace;
     font-size: 13.5px;
@@ -185,6 +302,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-width: 0;
 }
 
 .hero-tag {
@@ -312,6 +430,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
 }
 
 .hero-photo-wrap {
@@ -1223,9 +1342,22 @@ a {
         display: none;
     }
 
+    .nav-burger {
+        position: relative;
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
     .blog-main {
         width: min(100%, calc(100% - 1.5rem));
         padding-top: 90px;
+    }
+}
+
+@media (min-width: 901px) {
+    .nav-mobile-backdrop,
+    .nav-mobile-menu {
+        display: none;
     }
 }
 
