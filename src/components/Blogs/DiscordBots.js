@@ -1,265 +1,232 @@
-import React, { useEffect } from "react"
-import Aos from "aos"
-import "aos/dist/aos.css"
+import React from "react"
+import BlogLayout from "../BlogLayout"
 
 const DiscordBots = () => {
-    useEffect(() => {
-        Aos.init({ duration: 2000, once: true })
-    })
     return (
-        <section className="text-gray-400 body-font" data-aos="fade">
-            <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                <div className="flex flex-col text-center w-full mb-12">
-                    <h2 className="text-xs text-green-400 tracking-widest font-medium title-font mb-1">
-                        Discord API
-                    </h2>
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
-                        Making Discord Bots
-                    </h1>
-                    <div className="container mx-auto flex px-5 pt-12 items-center justify-center flex-col">
-                        <img
-                            className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
-                            alt="hero"
-                            src={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
-                        ></img>
-                    </div>
+        <BlogLayout
+            eyebrow="Discord API"
+            title="Making Discord Bots"
+            summary="A practical path for learning Discord bot development without getting trapped in shallow tutorials."
+            meta="Written from hands-on bot-building experience."
+            accent="blue"
+        >
+            <section className="blog-section">
+                <img
+                    className="blog-hero-image"
+                    alt="Discord developers"
+                    src={`${process.env.PUBLIC_URL}/assets/discord-devs.webp`}
+                />
+                <p className="blog-lead">
+                    <em>Written by a Verified Discord Bot Developer btw...</em>
+                </p>
+                <p>
+                    Discord bot making is a very useful project to learn how to
+                    use APIs and wrappers, with it being blown up in the recent
+                    years, YouTubers like <strong>Swas.py</strong> have been
+                    giving trash tutorials. Here&apos;s what you need to
+                    learn...
+                </p>
+            </section>
+
+            <section className="blog-section">
+                <h2>What are discord bots?</h2>
+                <p>
+                    Bots on Discord are applications that automate work inside a
+                    server. They can perform several useful tasks on your
+                    server automatically. That includes welcoming any new
+                    members, banning troublemakers, and moderating the
+                    discussion. Some bots even add music or games to your
+                    server. Keep in mind, this is not a tutorial, this is what
+                    you should learn.
+                </p>
+            </section>
+
+            <section className="blog-section">
+                <h2>The Discord API</h2>
+                <p>
+                    The Discord API consists of two separate pieces: the
+                    WebSocket and REST APIs. Broadly speaking, the WebSocket
+                    API is used to receive events from Discord in real time,
+                    while the REST API is used to perform actions inside of
+                    Discord.
+                </p>
+            </section>
+
+            <section className="blog-section">
+                <h2>Rest &amp; Websocket API</h2>
+                <div className="blog-callout">
+                    Discord&apos;s Gateway API is used for maintaining
+                    persistent, stateful websocket connections between your
+                    client and Discord&apos;s servers. These connections are
+                    used for sending and receiving real-time events your client
+                    can use to track and update local state.
+                    <br />
+                    <br />
+                    In short, WebSocket API is used to receive events from
+                    discord, like the message creation, user ban or kick,
+                    message edit or deletion, user updates etc.
+                    <br />
+                    <br />
+                    The Rest API is used by the bots to perform general
+                    operations and query for information. The Rest API call is
+                    used by the bot to ask discord to do a general operation
+                    such as send a message, ban or kick a user etc.
                 </div>
-                <div className="text-center lg:w-2/3 w-full">
-                    <p className="leading-relaxed mb-8">
-                        <em>
-                            Written by a Verified Discord Bot Developer btw...
-                        </em>
-                        <br />
-                        <br />
-                        Discord bot making is a very useful project to learn how
-                        to use APIs and wrappers, with it being blown up in the
-                        recent years, YouTubers like <strong>
-                            Swas.py
-                        </strong>{" "}
-                        have been giving trash tutorials. Here's what you need
-                        to learn...
-                    </p>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        What are discord bots?
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        Bots on Discord, the group messaging platform, are
-                        helpful artificial intelligence that can perform several
-                        useful tasks on your server automatically. That includes
-                        welcoming any new members, banning troublemakers, and
-                        moderating the discussion. Some bots even add music or
-                        games to your server. Keep in mind, this is not a
-                        tutorial, this is what you should learn.
-                    </p>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        The Discord API
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        The Discord API consists of two separate pieces: the
-                        WebSocket and REST APIs. Broadly speaking, the WebSocket
-                        API is used to receive events from Discord in real time,
-                        while the REST API is used to perform actions inside of
-                        Discord.
-                    </p>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        Rest & Websocket API
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        Discord's Gateway API is used for maintaining
-                        persistent, stateful websocket connections between your
-                        client and our servers. These connections are used for
-                        sending and receiving real-time events your client can
-                        use to track and update local state. The Gateway API
-                        uses secure websocket connections as specified in RFC
-                        6455. In short, WebSocket API is used to receive events
-                        from discord, like the message creation, user ban/kick,
-                        message edit/deletion, user updates etc.
-                        <br></br>
-                        <br></br>
-                        The Rest API is used by the bots to perform general
-                        operations and query for information. The Rest API call
-                        is used by the bot to ask discord to do a general
-                        operation such as send a message, ban/kick a user etc.
-                    </p>
-                    <div className="container mx-auto flex px-5 items-center justify-center flex-col">
-                        <img
-                            className="lg:w-4/6 md:w-4/6 w-5/6 mb-10 object-cover object-center rounded"
-                            alt="hero"
-                            src={`${process.env.PUBLIC_URL}/assets/rest-websocket.webp`}
-                        ></img>
-                    </div>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        Tools & Wrappers
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        Keeping in mind, you have a basic knowledge and
-                        understanding of the language you are going to be using,
-                        while it's always a good idea to have some understanding
-                        of every level of your technology stack, using the
-                        Discord WebSocket and REST APIs directly is
-                        time-consuming, error-prone, generally unnecessary, and
-                        in fact dangerous. The{" "}
+                <img
+                    className="blog-wide-image"
+                    alt="REST versus WebSocket diagram"
+                    src={`${process.env.PUBLIC_URL}/assets/rest-websocket.webp`}
+                />
+            </section>
+
+            <section className="blog-section">
+                <h2>Tools &amp; Wrappers</h2>
+                <p>
+                    Keeping in mind, you have a basic knowledge and
+                    understanding of the language you are going to be using,
+                    while it&apos;s always a good idea to have some
+                    understanding of every level of your technology stack, using
+                    the Discord WebSocket and REST APIs directly is
+                    time-consuming, error-prone, generally unnecessary, and in
+                    fact dangerous. The libraries officially mentioned by
+                    Discord are generally mature, well-documented, and feature
+                    full coverage of the Discord API. The most popular
+                    libraries are:
+                </p>
+                <ul className="blog-list">
+                    <li>
                         <a
-                            className="text-green-400"
-                            href="https://discord.com/developers/docs/topics/community-resources#libraries"
-                        >
-                            libraries
-                        </a>{" "}
-                        officially mentioned by Discord are generally mature,
-                        well-documented, and feature full coverage of the
-                        Discord API. The most popular libraries are{" "}
-                        <a
-                            className="text-green-400"
                             href="https://github.com/Rapptz/discord.py"
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             discord.py
                         </a>{" "}
-                        and{" "}
+                        is the standard choice in Python.
+                    </li>
+                    <li>
                         <a
-                            className="text-green-400"
                             href="https://github.com/discordjs/discord.js"
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             discord.js
+                        </a>{" "}
+                        is the standard choice in Node.js.
+                    </li>
+                    <li>
+                        Discord also maintains an official list of{" "}
+                        <a
+                            href="https://discord.com/developers/docs/topics/community-resources#libraries"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            community libraries
                         </a>
-                    </p>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        Making the Bot
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        To make the bot itself, learn the required language and
-                        install the package/library Make the Bot application and
-                        code the bot, host it using free services like{" "}
-                        <a
-                            href="https://herokuapp.com/"
-                            className="text-green-400"
-                        >
-                            Heroku
-                        </a>{" "}
-                        or use a <strong>paid VPS</strong> services like{" "}
-                        <a
-                            href="https://digitalocean.com"
-                            className="text-green-400"
-                        >
-                            Digital Ocean
-                        </a>{" "}
-                        for the best possible hosting. To code the best bot, you
-                        need to read documentation for the library, knowing your
-                        language well and not falling into servers and tutorials
-                        like <strong>Swas.py's</strong> server and YouTube
-                        channel.
-                    </p>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        Got stuck? 😏
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        Can't seem to fix an error? Or have a general doubt. Ask
-                        for help in popular coding servers like -{" "}
-                        <a
-                            className="text-green-400"
-                            href="https://discord.gg/python"
-                        >
+                        .
+                    </li>
+                </ul>
+            </section>
+
+            <section className="blog-section">
+                <h2>Making the Bot</h2>
+                <p>
+                    To make the bot itself, learn the required language and
+                    install the package or library. Make the bot application and
+                    code the bot, host it using free services like Heroku or
+                    use a <strong>paid VPS</strong> service like DigitalOcean
+                    for the best possible hosting. To code the best bot, you
+                    need to read documentation for the library, know your
+                    language well, and not fall into servers and tutorials like
+                    <strong> Swas.py&apos;s </strong> server and YouTube
+                    channel.
+                </p>
+            </section>
+
+            <section className="blog-section">
+                <h2>Got stuck?</h2>
+                <p>
+                    Can&apos;t seem to fix an error? Or have a general doubt.
+                    Ask for help in popular coding servers like:
+                </p>
+                <ul className="blog-list">
+                    <li>
+                        <a href="https://discord.gg/python" target="_blank" rel="noreferrer">
                             Python
                         </a>
-                        ,{" "}
-                        <a
-                            className="text-green-400"
-                            href="https://discord.gg/dpy"
-                        >
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/dpy" target="_blank" rel="noreferrer">
                             Discord.py
                         </a>
-                        ,{" "}
-                        <a
-                            className="text-green-400"
-                            href="https://discord.gg/djs"
-                        >
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/djs" target="_blank" rel="noreferrer">
                             Discord.js
                         </a>
-                        ,{" "}
-                        <a
-                            className="text-green-400"
-                            href="https://discord.gg/code"
-                        >
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/code" target="_blank" rel="noreferrer">
                             The Coding Den
                         </a>
-                        <br />
-                        <br />
-                        Most importantly, learn to use google and{" "}
+                    </li>
+                    <li>
+                        Most importantly, learn to use Google and{" "}
                         <a
-                            className="text-green-400"
                             href="https://stackoverflow.com"
+                            target="_blank"
+                            rel="noreferrer"
                         >
-                            StackOverflow
+                            Stack Overflow
                         </a>
-                    </p>
-                    <div className="container mx-auto flex px-5 items-center justify-center flex-col">
-                        <img
-                            className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
-                            alt="hero"
-                            src={`${process.env.PUBLIC_URL}/assets/google-it.jpeg`}
-                        ></img>
-                    </div>
-                    <h1 className="sm:text-2xl text-xl font-medium title-font mb-2 text-white">
-                        Bot Verification
-                    </h1>
-                    <p className="leading-relaxed mb-8">
-                        So, you published your bot and you got a huge success,
-                        your bot blew up and reached 75 servers. Verification
-                        means that we can release features that give developers
-                        more control over Discord. It means we can encourage
-                        users to adopt bots within Discord, instead of scouring
-                        the internet. It also means that bots can safely grow
-                        orders of magnitude larger than they are today.
-                        Protecting user privacy and security, as well as
-                        maintaining trust, is our utmost responsibility. We want
-                        to ensure that we continue to uphold that as our bot
-                        ecosystem grows.
-                        <br />
-                        <br />
-                        Fill up a simple form in the Dev Portal and get your bot
-                        verified!
-                        <br />
-                        Read this article made by discord on verfication -{" "}
-                        <a
-                            className="text-green-400"
-                            href="https://support.discord.com/hc/en-us/articles/360040720412-Bot-Verification-and-Data-Whitelisting"
-                        >
-                            Bot Verification and Data Whitelisting
-                        </a>
-                        <br />
-                        <br />
-                        That's it, you are now a Verified Bot Developer! One of
-                        the greatest achievement in the world of discord bot
-                        dev.
-                        <br />
-                        <br />
-                    </p>
-                    <div className="flex justify-center">
-                        <button
-                            className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
-                            onClick={() =>
-                                window.open(
-                                    "https://discord.com/developers/applications",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Developer Portal
-                        </button>
-                        <button
-                            className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
-                            onClick={() =>
-                                window.open(
-                                    "https://discord.com/developers/docs/intro",
-                                    "_blank"
-                                )
-                            }
-                        >
-                            Discord API Docs
-                        </button>
-                    </div>
+                    </li>
+                </ul>
+                <img
+                    className="blog-inline-image"
+                    alt="Google it graphic"
+                    src={`${process.env.PUBLIC_URL}/assets/google-it.jpeg`}
+                />
+            </section>
+
+            <section className="blog-section">
+                <h2>Verification</h2>
+                <p>
+                    So, you published your bot and you got a huge success, your
+                    bot blew up and reached 75 servers. Verification means that
+                    Discord can release features that give developers more
+                    control over Discord. It means Discord can encourage users
+                    to adopt bots within Discord, instead of scouring the
+                    internet. It also means that bots can safely grow orders of
+                    magnitude larger than they are today.
+                </p>
+                <p>
+                    Protecting user privacy and security, as well as
+                    maintaining trust, is Discord&apos;s responsibility. Fill
+                    up a simple form in the Dev Portal and get your bot
+                    verified. Read the article made by Discord on verification
+                    and data whitelisting, then that&apos;s it, you are now a
+                    Verified Bot Developer.
+                </p>
+                <div className="blog-actions">
+                    <a
+                        className="btn-primary"
+                        href="https://discord.com/developers/applications"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Developer Portal
+                    </a>
+                    <a
+                        className="btn-ghost"
+                        href="https://discord.com/developers/docs/intro"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Discord API Docs
+                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
+        </BlogLayout>
     )
 }
 

@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S1D — Siddhant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05080f;
+    --bg2: #090e1a;
+    --bg3: #0d1526;
+    --border: #172038;
+    --border2: #1e2d4a;
+    --blue: #4a8cff;
+    --cyan: #2dd4bf;
+    --amber: #f59e0b;
+    --text: #e8edf5;
+    --muted: #5a6a85;
+    --muted2: #8899b0;
+    --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  /* ── GRID BG ── */
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 20%, transparent 80%);
+  }
+
+  section, nav, footer { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 64px;
+    background: rgba(5, 8, 15, 0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 18px;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo-badge {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, #2a4fff 0%, #06b6d4 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a {
+    color: var(--muted2); font-size: 13.5px; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.2px;
+    transition: color 0.2s;
+    font-family: 'DM Mono', monospace;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--cyan) !important;
+    padding: 6px 16px; border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s !important;
+  }
+  .nav-cta:hover { background: rgba(45, 212, 191, 0.08) !important; border-color: var(--cyan) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 120px clamp(1.5rem, 5vw, 4rem) 5rem;
+    max-width: 1280px; margin: 0 auto;
+  }
+  .hero-left { display: flex; flex-direction: column; gap: 1.5rem; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cyan); border: 1px solid rgba(45, 212, 191, 0.25);
+    padding: 5px 14px; border-radius: 100px;
+    background: rgba(45, 212, 191, 0.05);
+    width: fit-content;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: blink 2s infinite; }
+  @keyframes blink { 0%,100% { opacity:1 } 50% { opacity: 0.3 } }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    color: var(--text);
+  }
+  .hero-name span { color: var(--blue); }
+  .hero-sub {
+    font-size: 16px; color: var(--muted2); font-weight: 400;
+    line-height: 1.7; max-width: 440px;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--blue); color: #fff; border: none;
+    padding: 10px 22px; border-radius: 8px;
+    font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--muted2);
+    border: 1px solid var(--border2);
+    padding: 10px 22px; border-radius: 8px;
+    font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--muted); }
+
+  .hero-skills {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;
+  }
+  .skill-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    color: var(--muted2); border: 1px solid var(--border);
+    padding: 4px 12px; border-radius: 100px;
+    background: var(--bg2);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .skill-pill:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
+
+  .hero-right { display: flex; justify-content: center; align-items: center; }
+  .hero-photo-wrap {
+    position: relative; width: 380px; height: 440px;
+  }
+  .hero-photo-bg {
+    position: absolute; inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(74, 140, 255, 0.15) 0%, rgba(45, 212, 191, 0.08) 100%);
+    border: 1px solid var(--border2);
+    transform: rotate(2deg);
+  }
+  .hero-photo {
+    position: absolute; inset: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border2);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-photo-label {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: 12px; padding: 10px 16px;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--cyan); letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  /* ── SECTION BASE ── */
+  .section {
+    max-width: 1280px; margin: 0 auto;
+    padding: 5rem clamp(1.5rem, 5vw, 4rem);
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800; letter-spacing: -1px; color: var(--text);
+    line-height: 1.1; margin-bottom: 3rem;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 160px; top: 16px; bottom: 16px;
+    width: 1px; background: var(--border2);
+  }
+  .timeline-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 2rem; padding: 2rem 0; position: relative;
+  }
+  .timeline-item + .timeline-item { border-top: 1px solid var(--border); }
+  .timeline-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 1px;
+    color: var(--muted);
+    padding-top: 4px; text-align: right;
+    padding-right: 2rem;
+    display: flex; flex-direction: column; align-items: flex-end;
+    justify-content: flex-start; gap: 4px;
+  }
+  .timeline-dot {
+    position: absolute; left: 154px; top: 2.25rem;
+    width: 13px; height: 13px; border-radius: 50%;
+    background: var(--bg3); border: 2px solid var(--blue);
+    box-shadow: 0 0 12px rgba(74, 140, 255, 0.4);
+  }
+  .timeline-content {}
+  .timeline-role {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 18px;
+    color: var(--text); margin-bottom: 2px;
+    letter-spacing: -0.3px;
+  }
+  .timeline-org {
+    font-size: 13px; color: var(--blue); font-weight: 500;
+    font-family: 'DM Mono', monospace; margin-bottom: 0.75rem;
+  }
+  .timeline-desc { font-size: 14px; color: var(--muted2); line-height: 1.7; }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+    cursor: pointer; text-decoration: none; display: block;
+  }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+  .project-card:hover .project-img-wrap { opacity: 1; }
+  .project-img-wrap {
+    height: 180px; overflow: hidden;
+    opacity: 0.85; transition: opacity 0.25s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .project-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+  }
+  .project-img-placeholder.wolf { background: linear-gradient(135deg, #3a3fff 0%, #6366f1 100%); }
+  .project-img-placeholder.vax { background: linear-gradient(135deg, #0e1a2e 0%, #172038 100%); }
+  .project-img-placeholder.spades { background: linear-gradient(135deg, #0a2218 0%, #0d3825 100%); }
+  .project-img-placeholder.mirage { background: linear-gradient(135deg, #0d0f1e 0%, #1a1d40 100%); }
+  .project-body { padding: 1.25rem; }
+  .project-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 17px; color: var(--text);
+    margin-bottom: 8px; letter-spacing: -0.3px;
+  }
+  .project-desc { font-size: 13px; color: var(--muted2); line-height: 1.6; margin-bottom: 1rem; }
+  .project-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; color: var(--blue); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: gap 0.2s;
+  }
+  .project-card:hover .project-link { gap: 8px; }
+
+  /* ── BLOGS ── */
+  .blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .blog-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: block;
+  }
+  .blog-card:hover { border-color: var(--border2); background: var(--bg3); }
+  .blog-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .blog-tag {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--cyan); background: rgba(45, 212, 191, 0.08);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .blog-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+  .blog-title {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px;
+    color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px;
+  }
+  .blog-excerpt { font-size: 13px; color: var(--muted2); line-height: 1.6; }
+
+  /* ── GITHUB SEARCH ── */
+  .github-search-wrap {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    max-width: 540px;
+  }
+  .github-search-label {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+  }
+  .github-search-row { display: flex; gap: 10px; }
+  .github-search-input {
+    flex: 1; background: var(--bg); border: 1px solid var(--border2);
+    border-radius: 8px; padding: 9px 14px; color: var(--text);
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .github-search-input:focus { border-color: var(--blue); }
+  .github-search-input::placeholder { color: var(--muted); }
+  .github-search-btn {
+    background: var(--blue); color: #fff; border: none;
+    padding: 9px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    font-family: 'Manrope', sans-serif; cursor: pointer;
+    transition: opacity 0.2s; white-space: nowrap;
+  }
+  .github-search-btn:hover { opacity: 0.85; }
+  #gh-result { font-size: 13px; color: var(--muted2); font-family: 'DM Mono', monospace; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px; background: var(--border);
+    max-width: 1280px; margin: 0 auto;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    max-width: 1280px; margin: 0 auto;
+    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+    display: flex; gap: 3rem; flex-wrap: wrap;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800; letter-spacing: -1px; color: var(--text);
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-left {
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);
+  }
+  .footer-right { display: flex; gap: 1.5rem; }
+  .footer-right a {
+    color: var(--muted); font-size: 13px; text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+  .footer-right a:hover { color: var(--text); }
+
+  /* ── GLOW ACCENTS ── */
+  .glow-blue {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(74, 140, 255, 0.12) 0%, transparent 70%);
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  html, body, * { cursor: none !important; }
+  #cursor-plane {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    width: 36px;
+    height: 36px;
+    left: -100px;
+    top: -100px;
+    display: block;
+    overflow: visible;
+  }
+  .trail-dot {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99997;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 100px; }
+    .hero-right { order: -1; }
+    .hero-photo-wrap { width: 280px; height: 320px; }
+    .timeline::before { left: 0; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-date { text-align: left; padding-right: 0; padding-left: 1.5rem; }
+    .timeline-dot { left: -6px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-badge">S1D</div>
+    Siddhant
+  </a>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#blogs">Blogs</a>
+    <a href="https://github.com/siddhantshr" target="_blank" class="nav-cta">GitHub ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- glow -->
+  <div class="glow-blue" style="width:600px;height:500px;top:-100px;left:-100px;z-index:0;pointer-events:none;position:absolute;"></div>
+
+  <div class="hero-left">
+    <div class="hero-tag fade-up">IIT Bombay · Aerospace Engg · 2025–29</div>
+    <h1 class="hero-name fade-up delay-1">Hello,<br>I'm <span>Siddhant.</span></h1>
+    <p class="hero-sub fade-up delay-2">
+      <strong>Aerospace student</strong> at IIT Bombay and a <strong>coding enthusiast</strong> with 5+ years of building bots, utilities, and tools. I turn ideas into shipped software.
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="https://linkedin.com" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+    </div>
+    <div class="hero-skills fade-up delay-4">
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Node.js</span>
+      <span class="skill-pill">Discord.js</span>
+      <span class="skill-pill">SQL</span>
+      <span class="skill-pill">Bash</span>
+      <span class="skill-pill">Computer Vision</span>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up delay-3">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-photo">
+        <!-- swap src with your actual photo path -->
+        <img src="https://via.placeholder.com/380x440/0d1526/4a8cff?text=Siddhant" alt="Siddhant" />
+      </div>
+      <div class="hero-photo-label">Student Dev 🛩</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="divider"></div>
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">5+</span>
+    <span class="stat-label">Years Coding</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">4+</span>
+    <span class="stat-label">Projects Shipped</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">IIT B</span>
+    <span class="stat-label">Aerospace Engg</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">Sub-15</span>
+    <span class="stat-label">3×3 Speedcube Avg</span>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-label">Timeline</div>
+  <h2 class="section-title">Experience</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span>2025–29</span>
+      </div>
+      <div class="timeline-dot" style="border-color: var(--amber);box-shadow:0 0 12px rgba(245,158,11,0.4)"></div>
+      <div class="timeline-content">
+        <div class="timeline-role">BTech — Aerospace Engineering</div>
+        <div class="timeline-org">Indian Institute of Technology, Bombay</div>
+        <p class="timeline-desc">Pursuing Aerospace Engg at IIT Bombay after clearing JEE Advanced, driven by a deep subject interest in aviation and astro systems.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date"><span>2022–25</span></div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Team Lead — Team Mirage</div>
+        <div class="timeline-org">Maharaja Sawai Man Singh Vidyalaya</div>
+        <p class="timeline-desc">Led Team Mirage through national tech competitions — Make-A-Thon at Shaastra IIT Madras, Atomquest & Games of Codes at Techfest IIT Bombay, TechExpo at TechNiche IIT Guwahati, and RoboVR at Techfest IIT Bombay.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date"><span>Jun 2020</span></div>
+      <div class="timeline-dot" style="border-color:var(--cyan);box-shadow:0 0 12px rgba(45,212,191,0.35)"></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Member — WCA</div>
+        <div class="timeline-org">World Cube Association</div>
+        <p class="timeline-desc">Attained a sub-15 average in 3×3 speedcubing. Developed rational thought, time management, and competitive discipline through consistent practice. Organised a local tournament for speedcubing.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date"><span>Ongoing</span></div>
+      <div class="timeline-dot" style="border-color:var(--muted)"></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Member — AIAA</div>
+        <div class="timeline-org">American Institute of Aeronautics and Astronautics</div>
+        <p class="timeline-desc">Student member of AIAA, engaging with aerospace research, publications, and the global community of aviation and astronautics professionals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<div class="divider"></div>
+<section class="section" id="projects">
+  <div class="section-label">Development</div>
+  <h2 class="section-title">Projects &amp; Repositories</h2>
+
+  <div class="projects-grid">
+    <a class="project-card" href="#" target="_blank">
+      <div class="project-img-wrap">
+        <div class="project-img-placeholder wolf">
+          <svg viewBox="0 0 80 80" width="80" fill="rgba(255,255,255,0.85)">
+            <path d="M40 8 L55 25 L70 20 L58 38 L72 55 L50 50 L40 68 L30 50 L8 55 L22 38 L10 20 L25 25 Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Discord API Bot</div>
+        <div class="project-name">The Hyena Bot</div>
+        <p class="project-desc">A useful bot that brings great fun to your server. Configure moderation, logging, automod, and more. Discontinued.</p>
+        <span class="project-link">Learn More →</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="#" target="_blank">
+      <div class="project-img-wrap">
+        <div class="project-img-placeholder vax">
+          <svg viewBox="0 0 80 80" width="72" fill="none" stroke="var(--cyan)" stroke-width="2">
+            <circle cx="40" cy="40" r="28"/>
+            <circle cx="40" cy="40" r="16"/>
+            <circle cx="40" cy="40" r="6"/>
+            <line x1="40" y1="12" x2="40" y2="64"/>
+            <line x1="12" y1="40" x2="68" y2="40"/>
+          </svg>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Public Utils</div>
+        <div class="project-name">Vaxin Alerts</div>
+        <p class="project-desc">A useful website (now archived) for monitoring vaccination centers. Provides instant Telegram notifications on slot availability.</p>
+        <span class="project-link">Learn More →</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="#" target="_blank">
+      <div class="project-img-wrap">
+        <div class="project-img-placeholder spades">
+          <svg viewBox="0 0 80 80" width="72">
+            <path d="M40 6 L70 44 A20 20 0 0 1 22 44 L40 6Z" fill="rgba(45,212,191,0.9)"/>
+            <ellipse cx="40" cy="58" rx="10" ry="7" fill="rgba(45,212,191,0.5)"/>
+            <rect x="35" y="55" width="10" height="16" rx="2" fill="rgba(45,212,191,0.7)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Public Utils · CV / AI</div>
+        <div class="project-name">Spades</div>
+        <p class="project-desc">Uses advanced computer vision and AI to accurately detect and track suspicious activities related to package theft in real-time.</p>
+        <span class="project-link">Learn More →</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="#" target="_blank">
+      <div class="project-img-wrap">
+        <div class="project-img-placeholder mirage">
+          <svg viewBox="0 0 80 80" width="72" fill="none">
+            <circle cx="40" cy="40" r="28" stroke="rgba(99,102,241,0.8)" stroke-width="1.5"/>
+            <circle cx="40" cy="40" r="18" stroke="rgba(99,102,241,0.5)" stroke-width="1"/>
+            <circle cx="40" cy="40" r="8" fill="rgba(99,102,241,0.9)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-type">Discord API Bot</div>
+        <div class="project-name">Mirage</div>
+        <p class="project-desc">The customisable, self-hostable Hyena Bot. Configure moderation, automoderation, and more. Archived.</p>
+        <span class="project-link">Learn More →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<div class="divider"></div>
+<section class="section" id="blogs">
+  <div class="section-label">Writing</div>
+  <h2 class="section-title">Featured Blogs</h2>
+
+  <div class="blogs-grid">
+    <a class="blog-card" href="#">
+      <div class="blog-meta">
+        <span class="blog-tag">APIs</span>
+        <span class="blog-date">Mar 2022</span>
+      </div>
+      <div class="blog-title">Making Requests</div>
+      <p class="blog-excerpt">A client application sends a request to the server, and after the server processes it, returns a response. Covers URLs, HTTP methods, and practical usage.</p>
+    </a>
+
+    <a class="blog-card" href="#">
+      <div class="blog-meta">
+        <span class="blog-tag">Discord API</span>
+        <span class="blog-date">Mar 2022</span>
+      </div>
+      <div class="blog-title">Making a Discord Bot</div>
+      <p class="blog-excerpt">Discord bot creation is a great way to learn APIs and wrappers. Here's what you need to get started, from a Verified Bot Dev.</p>
+    </a>
+
+    <a class="blog-card" href="#">
+      <div class="blog-meta">
+        <span class="blog-tag">Misc.</span>
+        <span class="blog-date">Jul 2022</span>
+      </div>
+      <div class="blog-title">Photographies</div>
+      <p class="blog-excerpt">A curated collection of photographs from travels and everyday moments captured through the lens.</p>
+    </a>
+  </div>
+</section>
+
+<!-- GITHUB SEARCH -->
+<div class="divider"></div>
+<section class="section" id="search">
+  <div class="section-label">GitHub</div>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Search My Repos</h2>
+  <div class="github-search-wrap">
+    <span class="github-search-label">→ github.com/siddhantshr</span>
+    <div class="github-search-row">
+      <input class="github-search-input" id="gh-input" type="text" placeholder="search repositories..." />
+      <button class="github-search-btn" onclick="searchGH()">Search</button>
+    </div>
+    <div id="gh-result"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="divider" style="margin-top: 2rem;"></div>
+<footer>
+  <div class="footer-left">
+    <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--text);margin-bottom:4px;">S1D — Siddhant</div>
+    Copyright &copy; 2022–2025 · @siddhantshr
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/siddhantshr" target="_blank">GitHub</a>
+    <a href="#" target="_blank">Instagram</a>
+    <a href="#" target="_blank">LinkedIn</a>
+    <a href="/cdn-cgi/l/email-protection#dcb4b59cafb5b8afb4aef2b5b2">Email</a>
+  </div>
+</footer>
+
+<!-- CANVAS TRAIL -->
+<canvas id="trail-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99996;"></canvas>
+
+<!-- AIRPLANE CURSOR — nose points UP in viewBox, JS rotates it -->
+<svg id="cursor-plane" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+  style="position:fixed;top:0;left:0;width:38px;height:38px;pointer-events:none;z-index:99999;overflow:visible;">
+  <!-- fuselage -->
+  <rect x="14" y="6" width="4" height="18" rx="2" fill="#f0f4ff"/>
+  <!-- nose cone -->
+  <polygon points="16,1 19,8 13,8" fill="#ffffff"/>
+  <!-- wings -->
+  <polygon points="16,11 1,19 4,20 16,15 28,20 31,19" fill="#4a8cff"/>
+  <!-- tail fins -->
+  <polygon points="16,22 10,30 12.5,30 16,25.5 19.5,30 22,30" fill="#2dd4bf"/>
+  <!-- engine exhaust glow -->
+  <circle cx="16" cy="25" r="2" fill="#2dd4bf" opacity="0.85"/>
+</svg>
+
+<script>
+(function() {
+  /* ── CANVAS CONTRAIL + PLANE CURSOR ── */
+  const canvas = document.getElementById('trail-canvas');
+  const ctx = canvas.getContext('2d');
+  const plane = document.getElementById('cursor-plane');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  let mx = -300, my = -300;
+  let px = -300, py = -300;
+  let angleDeg = 0;
+  let hasEnteredOnce = false;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    if (!hasEnteredOnce) { px = mx; py = my; hasEnteredOnce = true; }
+  });
+  document.addEventListener('mouseleave', () => { plane.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { plane.style.opacity = '1'; });
+
+  // particle pool
+  const PMAX = 120;
+  const parts = [];
+  for (let i = 0; i < PMAX; i++) {
+    parts.push({ x:0, y:0, vx:0, vy:0, r:0, life:0, maxLife:0, type:0,
+      cr:74, cg:140, cb:255 });
+  }
+  let pIdx = 0;
+
+  function spawn(x, y) {
+    const p = parts[pIdx++ % PMAX];
+    p.type = Math.random() < 0.65 ? 0 : 1;
+    p.maxLife = p.type === 0 ? 45 + Math.random()*25 : 18 + Math.random()*14;
+    p.life = p.maxLife;
+    p.r = p.type === 0 ? 4 + Math.random()*5 : 1.5 + Math.random()*2.5;
+    p.x = x + (Math.random()-0.5)*8;
+    p.y = y + (Math.random()-0.5)*8;
+    p.vx = (Math.random()-0.5)*0.8;
+    p.vy = (Math.random()-0.5)*0.8 - 0.15;
+    if (p.type === 0) {
+      if (Math.random() < 0.5) { p.cr=74; p.cg=140; p.cb=255; }  // blue
+      else                      { p.cr=45; p.cg=212; p.cb=191; }  // cyan
+    } else { p.cr=210; p.cg=235; p.cb=255; }
+  }
+
+  function spawnBurst(x, y, n) {
+    for (let i = 0; i < n; i++) {
+      const p = parts[pIdx++ % PMAX];
+      p.type = 2; // gold spark
+      p.maxLife = 28 + Math.random()*16; p.life = p.maxLife;
+      p.r = 2 + Math.random()*3;
+      p.x = x; p.y = y;
+      const a = Math.random()*Math.PI*2;
+      const sp = 2.5 + Math.random()*4.5;
+      p.vx = Math.cos(a)*sp; p.vy = Math.sin(a)*sp;
+      p.cr=255; p.cg=200; p.cb=60;
+    }
+  }
+
+  document.addEventListener('click', e => spawnBurst(e.clientX, e.clientY, 14));
+
+  let frame = 0;
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  function tick() {
+    requestAnimationFrame(tick);
+
+    // clear
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (!hasEnteredOnce) return;
+
+    // smooth plane follow
+    px = lerp(px, mx, 0.16);
+    py = lerp(py, my, 0.16);
+
+    const dx = mx - px, dy = my - py;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    if (dist > 0.5) {
+      const target = Math.atan2(dy, dx) * 180/Math.PI + 90;
+      // shortest-path angle lerp
+      let diff = ((target - angleDeg) % 360 + 540) % 360 - 180;
+      angleDeg += diff * 0.1;
+    }
+
+    // position plane — transform: translate then rotate around its own centre
+    plane.style.transform =
+      `translate(${px - 19}px, ${py - 19}px) rotate(${angleDeg}deg)`;
+    plane.style.transformOrigin = '19px 19px';
+
+    // emit trail from engine exhaust (behind plane)
+    frame++;
+    const speed = Math.min(dist, 40);
+    if (frame % 2 === 0 || speed > 12) {
+      const rad = (angleDeg - 90) * Math.PI/180;
+      const ex = px - Math.cos(rad)*14;
+      const ey = py - Math.sin(rad)*14;
+      spawn(ex, ey);
+      if (speed > 15) spawn(ex, ey);
+    }
+
+    // draw particles
+    for (let i = 0; i < PMAX; i++) {
+      const p = parts[i];
+      if (p.life <= 0) continue;
+      p.life--;
+      p.x += p.vx; p.y += p.vy;
+      p.vy += 0.02; // gentle gravity
+
+      const t = p.life / p.maxLife;
+      let radius, alpha;
+
+      if (p.type === 0) {          // smoke: expands, fades
+        radius = p.r * (1 + (1-t)*2);
+        alpha  = Math.min(t*4,1) * 0.5 * t;
+      } else if (p.type === 1) {   // spark: shrinks
+        radius = p.r * t;
+        alpha  = t * 0.85;
+      } else {                     // gold burst
+        radius = p.r * t;
+        alpha  = t * 0.9;
+      }
+
+      if (alpha < 0.01) continue;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, Math.max(radius,0.5), 0, Math.PI*2);
+      if (p.type === 0) {
+        // radial gradient for soft smoke puff
+        const grd = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius);
+        grd.addColorStop(0, `rgba(${p.cr},${p.cg},${p.cb},${alpha})`);
+        grd.addColorStop(1, `rgba(${p.cr},${p.cg},${p.cb},0)`);
+        ctx.fillStyle = grd;
+      } else {
+        ctx.fillStyle = `rgba(${p.cr},${p.cg},${p.cb},${alpha})`;
+      }
+      ctx.fill();
+    }
+  }
+  tick();
+})();
+
+function searchGH() {
+  const q = document.getElementById('gh-input').value.trim();
+  const res = document.getElementById('gh-result');
+  if (!q) return;
+  res.textContent = 'Searching...';
+  fetch(`https://api.github.com/search/repositories?q=${encodeURIComponent(q)}+user:siddhantshr&per_page=3`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.items || data.items.length === 0) {
+        res.textContent = 'No repositories found.'; return;
+      }
+      res.innerHTML = data.items.map(repo =>
+        `<div style="margin-top:8px;"><a href="${repo.html_url}" target="_blank" style="color:var(--blue);text-decoration:none;">${repo.full_name}</a> — <span style="color:var(--muted)">${repo.description || 'No description'}</span></div>`
+      ).join('');
+    })
+    .catch(() => { res.textContent = 'Could not reach GitHub API.'; });
+}
+document.getElementById('gh-input').addEventListener('keydown', e => { if(e.key==='Enter') searchGH(); });
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('fade-up'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.project-card,.blog-card,.timeline-item,.stats-bar,.github-search-wrap')
+  .forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

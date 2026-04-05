@@ -1,23 +1,12 @@
-// import logo from './logo.svg';
+import React, { useEffect, useState } from "react"
 import "./App.css"
-import { useState, useEffect } from "react"
-import Navbar from "./components/Navbar"
-import Preloader from "./components/Preloader"
-import Hero from "./components/Hero"
-import Projects from "./components/Projects"
-import Footer from "./components/Footer"
-import Notfound from "./components/Notfound"
-import BlogsIntro from "./components/BlogsIntro"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import DiscordBots from "./components/Blogs/DiscordBots"
 import Requests from "./components/Blogs/Requests"
-// import Lambda from "./components/Lambda"
-import Timeline from "./components/Timeline"
-// import LoginScreen from "./components/Cobra/LoginScreen"
-// import SuperUser from "./components/Cobra/SuperUser"
-// import ProtectedRoute from "./components/ProtectedRoute"
-// import Competitions from "./components/Competitions"
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import CursorTrail from "./components/CursorTrail"
+import PortfolioPage from "./components/PortfolioPage"
+import Notfound from "./components-old/Notfound"
+import Preloader from "./components-old/Preloader"
 
 function App() {
     const [loading, setLoading] = useState(false)
@@ -44,6 +33,7 @@ function App() {
                 <Preloader></Preloader>
             ) : (
                 <Router>
+                    <CursorTrail />
                     <Routes>
                         <Route
                             path="*"
@@ -56,38 +46,17 @@ function App() {
                         <Route
                             exact
                             path="/"
-                            element={
-                                <>
-                                    <Navbar />
-                                    <Hero />
-                                    <Timeline />
-                                    <Projects />
-                                    <BlogsIntro />
-                                    <Footer />
-                                </>
-                            }
+                            element={<PortfolioPage />}
                         />
                         <Route
                             exact
                             path="/blogs/discord-bots"
-                            element={
-                                <>
-                                    <Navbar />
-                                    <DiscordBots />
-                                    <Footer />
-                                </>
-                            }
+                            element={<DiscordBots />}
                         ></Route>
                         <Route
                             exact
                             path="/blogs/requests"
-                            element={
-                                <>
-                                    <Navbar />
-                                    <Requests />
-                                    <Footer />
-                                </>
-                            }
+                            element={<Requests />}
                         ></Route>
                         <Route
                             exact
