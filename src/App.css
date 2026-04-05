@@ -175,6 +175,7 @@ a {
     gap: 4rem;
     align-items: center;
     min-height: 100vh;
+    min-height: 100svh;
     max-width: 1280px;
     margin: 0 auto;
     padding: 120px clamp(1.5rem, 5vw, 4rem) 5rem;
@@ -745,6 +746,11 @@ a {
     color: var(--muted);
 }
 
+.github-result-item a,
+.github-result-item span {
+    overflow-wrap: anywhere;
+}
+
 .divider {
     width: 100%;
     max-width: 1280px;
@@ -1066,6 +1072,7 @@ a {
 
 .blog-wide-image {
     margin-top: 1rem;
+    max-width: 100%;
 }
 
 .blog-callout {
@@ -1181,6 +1188,7 @@ a {
         grid-template-columns: 1fr;
         gap: 3rem;
         padding-top: 100px;
+        min-height: auto;
     }
 
     .hero-right {
@@ -1222,18 +1230,248 @@ a {
 }
 
 @media (max-width: 640px) {
+    .hero {
+        gap: 2rem;
+        padding: 92px 1rem 3.25rem;
+    }
+
+    .hero-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-tag {
+        max-width: 100%;
+        font-size: 10px;
+        letter-spacing: 1.4px;
+        line-height: 1.5;
+        white-space: normal;
+    }
+
+    .hero-name {
+        font-size: clamp(2.5rem, 14vw, 3.6rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-sub {
+        max-width: none;
+        font-size: 15px;
+    }
+
+    .hero-actions,
+    .hero-skills {
+        justify-content: center;
+    }
+
+    .hero-photo-wrap {
+        width: min(100%, 280px);
+        height: min(114vw, 320px);
+    }
+
     .github-search-row {
         flex-direction: column;
+    }
+
+    .github-search-wrap {
+        padding: 1.25rem;
+    }
+
+    .projects-grid,
+    .blogs-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .project-card,
+    .featured-blog-card {
+        width: min(100%, 420px);
+    }
+
+    .section-label,
+    .section-title {
+        text-align: center;
+    }
+
+    .stats-bar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .stat {
+        align-items: center;
+    }
+
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        gap: 1rem;
+        justify-items: center;
+        text-align: center;
+        padding-top: 2.75rem;
+    }
+
+    .timeline-date {
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .timeline-dot {
+        left: 50%;
+        top: 0.85rem;
+        transform: translateX(-50%);
+    }
+
+    .timeline-content {
+        max-width: 32rem;
     }
 
     .hero-photo-label {
         right: 0;
         bottom: -20px;
+        max-width: calc(100% - 1rem);
+        font-size: 12px;
+        white-space: normal;
     }
 
     .blog-article,
     .blog-hero {
         border-radius: 18px;
+    }
+
+    .blog-title {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+        letter-spacing: -1.3px;
+    }
+
+    .blog-summary {
+        font-size: 0.95rem;
+    }
+
+    .blog-hero,
+    .blog-article {
+        text-align: center;
+    }
+
+    .blog-list {
+        text-align: left;
+    }
+
+    .blog-section + .blog-section {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+
+    .blog-hero-image,
+    .blog-hero-image-small,
+    .blog-inline-image {
+        max-width: 100%;
+    }
+
+    .blog-table {
+        min-width: 560px;
+    }
+
+    .portfolio-footer {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-right {
+        gap: 0.9rem 1.25rem;
+        justify-content: center;
+    }
+
+    .github-search-wrap {
+        width: min(100%, 32rem);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .github-result-item {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-nav {
+        padding: 0 1rem;
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-logo-badge {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 3.5rem 1rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+        font-size: clamp(1.75rem, 9vw, 2.2rem);
+    }
+
+    .hero-actions,
+    .blog-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .stats-bar {
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .stat {
+        min-width: calc(50% - 0.75rem);
+    }
+
+    .portfolio-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-body,
+    .featured-blog-card,
+    .blog-article,
+    .blog-hero {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .featured-blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-main {
+        width: calc(100% - 1rem);
+        padding-top: 84px;
+    }
+
+    .blog-table {
+        min-width: 520px;
     }
 }
 
