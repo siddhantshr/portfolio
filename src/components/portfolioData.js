@@ -1,4 +1,11 @@
 export const experienceItems = [
+        {
+        date: "Ongoing",
+        role: "Developer - Reach",
+        org: "DevCom IIT Bombay",
+        desc: "Contributing to Reach, A one-stop solution to all your research and career needs.",
+        accent: "red",
+    },
     {
         date: "2025-29",
         role: "BTech - Aerospace Engineering",
@@ -25,7 +32,7 @@ export const experienceItems = [
         org: "American Institute of Aeronautics and Astronautics",
         desc: "Student member engaging with aerospace research, publications, and the wider global aviation and astronautics community.",
         accent: "muted",
-    },
+    }
 ]
 
 export const projectItems = [
@@ -81,8 +88,8 @@ export const blogItems = [
     {
         tag: "Misc.",
         date: "Jul 2022",
-        title: "Photographies",
-        excerpt: "A collection of travel and everyday photographs, preserved as a separate visual archive.",
+        title: "VSCO Photographies",
+        excerpt: "A collection of travel photography from my VSCO, spanning various locations and moments captured over the years.",
         href: "/blogs/photographies",
     },
 ]

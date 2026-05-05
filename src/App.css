@@ -573,6 +573,11 @@ a {
     box-shadow: none;
 }
 
+.timeline-dot.red {
+    border-color: #f87171;
+    box-shadow: 0 0 12px rgba(248, 113, 113, 0.4);
+}
+
 .timeline-role {
     margin-bottom: 2px;
     color: var(--text);

@@ -15,7 +15,7 @@ function App() {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, Math.random() * (3501 - 1000) + 1000)
+        }, Math.random() * (3501 - 1000) + 1000) // Simulate loading time between 1 and 3.5 seconds
     }, [])
     // useEffect(() => {
     //     const handleContextmenu = e => {
@@ -96,7 +96,7 @@ function App() {
 
 function Redirect() {
     window.location.replace(
-        "/photos" // Change this to the correct path for your photography blog
+        "https://sid.vsco.site/" // Change this to the correct path for your photography blog
     )
     return null
 }
