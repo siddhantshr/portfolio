@@ -53,6 +53,14 @@ export const projectItems = [
         variant: "vax",
     },
     {
+        type: "Python / API Wrapper",
+        name: "hyena-api.py",
+        desc: "A Python wrapper for the Hyena Bot API, enabling developers to easily integrate its features into their own projects and applications.",
+        href: "https://github.com/siddhantshr/hyena-api.py",
+        image: `${process.env.PUBLIC_URL}/assets/hyena.png`,
+        variant: "nova",
+    },
+    {
         type: "Public Utils · CV / AI",
         name: "Spades",
         desc: "A computer-vision project focused on detecting and tracking suspicious package theft activity in real time.",
@@ -68,6 +76,22 @@ export const projectItems = [
         image: `${process.env.PUBLIC_URL}/assets/mirage.png`,
         variant: "mirage",
     },
+    {
+        type: "Linux Daemon / Rust + Python + C",
+        name: "telemetry-daemon",
+        desc: "A Linux telemetry stack that collects per-process and system-wide CPU and memory metrics via /proc, stores them in SQLite, and surfaces insights through anomaly detection, heatmaps, and visualizations.",
+        href: "https://github.com/siddhantshr/telemetry-daemon",
+        image: `${process.env.PUBLIC_URL}/assets/daemon.jpg`,
+        variant: "aurora",
+    },
+    {
+        type: "C++ / OpenGL Simulation",
+        name: "Gravity Simulator",
+        desc: "A real-time N-body gravitational simulation built with C++, OpenGL, and GLFW. Features Velocity Verlet integration, adaptive timesteps, and fading orbital trails. YAML-configurable bodies.",
+        href: "https://github.com/siddhantshr/gravity-simulator",
+        image: `${process.env.PUBLIC_URL}/assets/gravity.jpg`,
+        variant: "cosmos",
+    }
 ]
 
 export const blogItems = [
